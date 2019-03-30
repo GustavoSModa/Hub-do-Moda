@@ -1,0 +1,37 @@
+body{
+    background-color: lightgray;
+}
+h2{
+    color: lightgray;
+}
+#sobre div{
+  top: 45%;
+  left: 50%;
+}
+
+p{
+    color:white;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+
+  background: #444;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+   border-radius: 10px;
+  background: darken;
+}
