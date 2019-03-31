@@ -35,3 +35,11 @@ p{
    border-radius: 10px;
   background: darken;
 }
+
+#center
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /*width: 50%;*/
+}
