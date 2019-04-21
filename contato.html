@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+	<title>Hub do Moda - Sugestões</title>
+    <link rel="icon" href="imagens/favicon-32x32.png">
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<meta name="description" content=""/>
+	<meta name="keywords" content=""/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="js/materialize.min.js"></script>
+	<link rel="stylesheet" href="css/master.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	</head>
+	<body>
+
+	<div class="cont">
+		<div class="imagem"></div>
+			<header>
+				<a href="index.html" class="logo"> Hub do Moda </a>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+				 	<li><a href="jogos.html">Jogos</a></li>
+				 	<li><a href="softwares.html">Softwares</a></li>
+				 	<li class="active"><a href="contato.html">Sugestões</a></li>
+				</ul>
+			</header>
+			<div class="pagina">
+
+				<div class="centro">
+					<h2>Dê a sua opinião! </h2>
+    <form class="col s12" action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfLKc0QOW2xwzI_NS-a70dFn3oEcXex_0dzld9hLJwFC2U7tw/formResponse" target="_blank" href="index.html">
+      <div class="row">
+        <div class="input-field col s10">
+					<i class="material-icons prefix">account_circle</i>
+          <input id="nome_usuario" type="text"   name="entry.777703937">
+          <label for="nome_usuario">Qual é o seu nome? </label>
+        </div>
+      </div>
+        <div class="row">
+					<div class="input-field col s10">
+						<i class="material-icons prefix">tv</i>
+						<input id="nome_jogo" type="text"  name="entry.262928040">
+						<label for="nome_jogo">Qual jogo/software você gostaria de ver na hub?</label>
+					</div>
+        </div>
+				<div class="row">
+					<div class="input-field col s8">
+						<i class="material-icons prefix">add_circle</i>
+          <textarea id="mais_sugestões" class="materialize-textarea" name="entry.561006215"></textarea>
+          <label for="mais_sugestões"> Mais sugestões? </label>
+				</div>
+	  </div>
+		<div class="row">
+			<div class="input-field col s8">
+				<i class="material-icons prefix">error</i>
+			<textarea id="mais_sugestões" class="materialize-textarea" name="entry.593304731"></textarea>
+			<label for="mais_sugestões"> Achou algum erro? </label>
+		</div>
+	</div>
+		<div class="row">
+			<button class="btn waves-effect waves-light btn-large black" type="submit" name="action" id="enviar">Enviar
+					<i class="material-icons right">send</i>
+			</button>
+	    </form>
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLSfLKc0QOW2xwzI_NS-a70dFn3oEcXex_0dzld9hLJwFC2U7tw/viewform">
+			<button class="btn waves-effect waves-light btn-large blue darken-4" name="formulario" id="form">Formulário
+					<i class="material-icons right">link</i>
+			</button>
+		</a>
+			</div>
+</div>
+			</div>
+
+<script>
+window.addEventListener("resize", myFunction);
+
+var x = 0;
+function myFunction() {
+  var txt = x += 1;
+  document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+</body>
+<footer class="page-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col l6 s12">
+							<h5 class="white-text">Hub do Moda</h5>
+							<p class="grey-text text-lighten-4">Apreoveitem a Hub</p>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="container">
+					© 2019 Gustavo Moda & Ivan Knobel
+					<p class="grey-text text-lighten-4 right">oi eu sou o moda :)</p>
+					</div>
+				</div>
+			</footer>
+</html>
