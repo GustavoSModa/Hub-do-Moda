@@ -1,52 +1,166 @@
 body{
+    margin: 0;
+    padding: 0;
     background-color: lightgray;
 }
-h2{
-    color: lightgray;
-}
-#sobre div{
-  top: 45%;
-  left: 50%;
-}
 
-p{
-    color:white;
+#sobre div{
+    top: 45%;
+    left: 50%;
 }
 
 ::-webkit-scrollbar {
-  width: 7px;
+    width: 7px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-
-  background: #444;
-
+    background: #444;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: grey;
-  border-radius: 0px;
+    background: grey;
+    border-radius: 0px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-   border-radius: 10px;
-  background: darken;
+    border-radius: 10px;
+    background: darken;
 }
 
 #center
 {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  /*width: 50%;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-
 
 #titulobig1 {
 
-  font-size:18px;
+    font-size:18px;
+}
+
+#titulobig2 {
+
+    font-size:13px;
+}
+
+
+.cont
+{
+    position: relative;
+    margin: 0;
+}
+
+.imagem
+{
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background: url(../imagens/bg1.jpg);
+    background-size: cover;
+}
+
+header
+{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background: #404040;
+    padding: 0 100px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-family: arial;
+    z-index: 1;
+}
+
+.logo
+{
+    color:#FFF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 24px;
+    font-family: Arial;
+}
+
+ul
+{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+}
+
+ul li
+{
+    list-style: none;
+    line-height: 50px;
+}
+
+ul li a
+{
+    color: #FFF;
+    text-decoration: none;
+    padding: 0 20px;
+}
+
+ul li:hover
+{
+    background: #595959;
+    color: #fff;
+}
+
+ul li.active
+{
+    background: #494949;
+    color: #fff;
+}
+
+.pagina
+{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+td div
+{
+    z-index: 0;
+}
+
+.video-tutorial
+{
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.titulo
+{
+    font-family: "arial";
+}
+
+.sobre
+{
+    font-family: "arial";
+    font-size: 24px;
+    text-align: justify;
+}
+
+div.centro
+{
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+div.centroEsquerda
+{
+    margin: auto;
+    width: 80%;
+    padding: 10px;
 }
