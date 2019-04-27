@@ -35,6 +35,18 @@
 
             <img src="imagens/jogos.png" id="center">
             <br>
+	<nav>
+		<div class="nav-wrapper">
+			<form id="pesquisa" onsubmit="return pesquisou(event)" action="">
+        <div class="input-field">
+          <input id="search" type="search" class="grey lighten-3 black-text">
+          <label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
+          <i class="material-icons black-text">close</i>
+        </div>
+      </form>
+		</div>
+	</nav>
+
         <table id="tabela">
 
 </tr>
@@ -46,86 +58,94 @@
 
           <script>
 
-            fazerTabela();
+					function pesquisou(e)
+					{
+  					e.preventDefault();
+						fazerTabela(document.getElementById("search").value);
+  					someBug();
+  					return false;
+					}
 
-            function fazerTabela()
+            fazerTabela("");
+
+            function fazerTabela(txt)
             {
 							var jogos =
 [
 
-	{ nome:"Age of Empires",        img:"AOE2.png",               link:"http://cesinthi.com/21435391/age-of-empires", descricao:"Um dos maiores simuladores senão o maior clássico dos jogos de simulação.Na segunda edição da renomada serie Age of Empires, o jogador deve gerenciar uma das 13 civilizações jogáveis na Idade Medieval", grande:false},
-	{ nome:"Broforce",              img:"broforce.jpg",           link:"http://cesinthi.com/21435391/broforce", descricao:"Atores de holywood musculosos com armas fodas lutando pelos EUA em diversas guerras.Tem algo mais americano que isso?Jogue offline,online ou dividindo o teclado com algum amigo.", grande:false},
-	{ nome:"COD black ops",         img:"cod.jpg",                link:"http://vaugette.com/21435391/call-of-duty-bo", descricao:"Sem palavras para descrever essa maravilha, marcou a infância de muitos.Jogue os diversos modos sozinhos e o Zombies com os seus parças.", grande:false},
-	{ nome:"Castle Crashers",       img:"castlecrashers.jpg",     link:"http://cesinthi.com/21435391/castle-crashers", descricao:"Escolhe uma cor, um cavaleiro e vá em busca das princesas mais feias dos mundos digitais.Esse jogo da Behemonth é imperdivel para qualquer um que se preze.", grande:false},
-	{ nome:"Celeste",               img:"celeste.png",            link:"http://vaugette.com/21435391/celeste", descricao:"Concorreu a melhor jogo de 2018, esse surpreendente jogo de plataforma mostra a evolução de Madaleine e a superação dela sobre seus obscuros problemas", grande:false},
-	{ nome:"Cuphead",               img:"cuphead.jpg",            link:"http://vaugette.com/21435391/cuphead", descricao:"O melhor indie de 2017, esse dificil jogo de plataforma junta gráficos unicos feitos a mão e uma trilha sonora perfeita.", grande:false},
-	{ nome:"Deadbolt",              img:"deadbolt.jpg",           link:"http://vaugette.com/21435391/deadbolt", descricao:"Controle a morte, seja o  mais silencioso possível para acabar com os malfeitores da sua cidade. ", grande:false},
-	{ nome:"Dead Cells",            img:"deadcells.jpg",          link:"http://vaugette.com/21435391/deadcells", descricao:"Esse indie rouge-like consegue com uma jogabilidade fantástica homenagear os antigos metroidvanias.Dead Cells é muito divertido e conta com um gráfico pixelado e uma trilha sonora linda d+.", grande:false},
-	{ nome:"Diablo 2 ",             img:"diablo2.jpg",            link:"http://vaugette.com/21435391/diablo-ii", descricao:"Aquele rpgzao antigo bem feito pra porra, diablo 2 é um dos mais famosos rpgs de 2000 e com certeza vale a pena se aventurar nessas dungeons.", grande:false},
-	{ nome:"Domina",                img:"domina.png",             link:"http://cesinthi.com/21435391/domina", descricao:"Ja imaginou controlar os soldados do coliseu? Gerencie recursos, treine soldados e vá se exibir e defender seu reino em divertidas lutas.", grande:false },
-	{ nome:"Enter the Gungeon",     img:"enterthegungeon.jpg",    link:"http://cesinthi.com/21435391/enter-the-gungeon", descricao:"Um dos melhores rougue-likes da atualidade, entre em gungeons onde os inimigos são balas que disparam balar.", grande:false },
-	{ nome:"Evoland",               img:"evoland.jpg",            link:"http://cesinthi.com/21435391/evoland", descricao:"Começe num simples 2D 2 EVOLUA para um lindo game 3D, com muitas homenagens a Zelda e a outros clássicos.",grande:false },
-	{ nome:"Game Dev Tycoon",       img:"gamedevtycoon.png",      link:"http://cesinthi.com/21435391/game-dev-tycoon", descricao:"Não sabe progrmar, mas quer falar que desenvolveu algum jogo?Agora você pode pode, com Game Dev Tycoon você gerencia um estudio de desenvovimento de jogos.", grande:false },
-	{ nome:"Gang Beasts",           img:"gangbeast.jpg",          link:"http://vaugette.com/21435391/gang-beast", descricao:"Lute com bonecos coloridos com uma física duvidosa para ver quem é o melhor dos seus amigos na porradaria.", grande:false },
-	{ nome:"Getting Over It",       img:"gettingoverit.jpg",      link:"http://vaugette.com/21435391/getting-over-it", descricao:"Passe raiva tentando chegar ao céu, com uma jogabilidade unica controle Bennett Foddy preso em um caldeirão com apenas uma enxada para escalar.", grande:false },
-	{ nome:"Goat Simulator",        img:"goatsimulator.jpg",      link:"http://vaugette.com/21435391/goat-simulator", descricao:"Esse sensacional simulador leva o jogador a controlar uma cabra em um universo com uma física completamente louca que deixa o jogo muita divertido e engraçado.", grande:false },
-	{ nome:"Hyper Light Drifter",   img:"hyperlightdrifter.png",  link:"http://vaugette.com/21435391/hyper-light-drifter", descricao:"Um belo RPG 2D que homenagea jogos 8bit e 16bit, considerado pelo seu criadoa a junção de Zelda e Diablo.", grande:false },
-	{ nome:"I am Bread",            img:"iambread.png",           link:"http://vaugette.com/21435391/i-am-bread", descricao:"Eu sou um <i>Pão</i>", grande:false },
-	{ nome:"Into the Breach",       img:"intothebreach.jpg",      link:"http://cesinthi.com/21435391/into-the-breach", descricao:"O melhor jogo de estratégia de 2018, nesse indie de turnos o seu objetivo é defender a sua base de  alienígenas fodas, com robôs mais fodas ainda. ", grande:false },
-	{ nome:"Kerbal Space Program",  img:"kerbalspaceprogram.jpg", link:"http://cesinthi.com/21435391/kerbal-space-plan", descricao:"Controle um programa espacial, crie foguetes e tudo mais. Jogue o modo carreira ou o sandbox e se divirta nesse engraçado simulador espacial", grande:true },
-	{ nome:"LEGO Star Wars",        img:"legostarwars.jpg",       link:"http://vaugette.com/21435391/lego-star-wars", descricao:"Em uma galáxia muito, muito distande, reviva a história da franquia Star Wars jogando como bonecos LEGO", grande:false },
-	{ nome:"Left 4 Dead",           img:"left4dead.jpg",          link:"http://vaugette.com/21435391/left-4-dead", descricao:"Deixado para morrer com 3 amgigos(ou bots), nesse clássico jogo apocalíptico, seu objetivo é sobreviver metendo bala em zombie sem vergonha.Se divirta com os carismaticos personagens e as mais diversas armas.", grande:false },
-	{ nome:"Mario 64",              img:"mario64.png",            link:"http://cesinthi.com/21435391/mario-64", descricao:"Entre em pinturas e salve a princesa, nesse grande jogo de N64.<br>EMULADOR JA INCLUSO.", grande:false },
-	{ nome:"Mario Kart",            img:"mariokart.png",          link:"http://cesinthi.com/21435391/mario-kart", descricao:"Ready! Set! Go!<br>EMULADOR JÁ INCLUSO.", grande:false },
-	{ nome:"Mario Party Wii",       img:"marioparty.png",         link:"http://vaugette.com/21435391/mario-party-wii", descricao:"Gosta de jogos de tabuleiro? Gosta de Mario? Pronto ta ai mario party, um jogo digital de tabuleiro do mario com diversos minigames. <br>EMULADOR JÁ INCLUSO.", grande:false },
-	{ nome:"New Super Mario Bros",  img:"newsupermariobros.jpg",  link:"http://cesinthi.com/21435391/new-super-mario-bros", descricao:"It's a me mario. <br>EMULADOR JA INCLUSO.", grande:true },
-	{ nome:"Papers Please",         img:"papersplease.jpg",       link:"http://cesinthi.com/21435391/papers-pls", descricao:"Trabalhe na fronteira de Arstotzka e perceba o problemas politicos enquanto sustenta sua familia com o pouco dinheiro que tem.", grande:false },
-	{ nome:"Pit People",            img:"pitpeople.jpg",          link:"http://vaugette.com/21435391/pit-people", descricao:"Com uma historia engraçada e divertida Pit People oferece um rpg de turnos com uma jogabilidade simples e ganha destaque nos dialogos e personagens engraçados.", grande:false },
-	{ nome:"Plague Inc Evolved",    img:"plagueinc.jpg",          link:"http://cesinthi.com/21435391/plague-inc", descricao:"Ja imaginou matar o seu vizinho que não vacinou os filhos? Agora você pode crie uma doença, infecte o mundo todo e mate geral.", grande:false },
-	{ nome:"Plants vs Zombies",     img:"plantasvszombies.jpg",   link:"http://cesinthi.com/21435391/plants-vs-zombies", descricao:"Plantas contra Zombies é o maior símbolo vegano na historia dos jogos, nesse classico tower defense você deve defender a sua casa de hordas e hordas de zumbies putos.", grande:false },
-	{ nome:"Pokemon Black",         img:"pokemonblack.jpg",       link:"http://cesinthi.com/21435391/pokemon-black", descricao:"A quinta geração de pokemon se passa em uma representação de Nova York e conta com os pokemons mais estranhos de todos, sim isso foi pra você mesmo pokemon sorvet aka Vanillite <br> EMULADOR JA INCLUSO.", grande:false },
-	{ nome:"Pokemon Platinum",      img:"pokemonplatinum.jpg",    link:"http://cesinthi.com/21435391/pokemon-platinum", descricao:"Acho que não preciso de palavras para descrever esse jogo, um dos clássicos do Nintendo DS.<br>EMULADOR JA INCLUSO", grande:false },
-	{ nome:"Poly Bridge",           img:"polybridge.jpg",         link:"http://vaugette.com/21435391/poly-bridge", descricao:"Construa pontes para carros passarem, mas cuidado para não passar da verba máxima.", grande:false },
-	{ nome:"Star Wars Battlefront", img:"starwarsbf2.jpg",        link:"http://vaugette.com/21435391/starwarsbattlefront2", descricao:"Entre de vez no universo star wars, com essa masterpiece dos fps você participa das maiores e mais loucas guerras spacias.", grande:true },
-	{ nome:"Spaceplan",             img:"spaceplan.jpg",          link:"http://cesinthi.com/21435391/spaceplan", descricao:"O melhor clicker ja feito(use auto-clicker pra facilitar disponivel nos softwares), em uma realidade pos apocalíptica, onde a unica coisa que você tem são batatas, se diverta lançando esses tubérculos para um planeta de sua pequena cápsula.", grande:false },
-	{ nome:"Stick Fight",           img:"stickfight.jpg",         link:"http://cesinthi.com/21435391/stick-fight", descricao:"Aceite o palito que você é e lute com seus amigos em diversos niveis e com uma caralhada de arma para saber quem é o melhor dos palitin.", grande:false },
-	{ nome:"Terraria",              img:"terraria.png",           link:"http://cesinthi.com/21435391/terraria", descricao:"Minecraft 2D so isso vlw.", grande:false },
-	{ nome:"Titan Souls",           img:"titan.jpg",              link:"http://cesinthi.com/21435391/titan-souls", descricao:"Sua arma: Um arco com UMA flecha <br><br> Um combate simples e uma bela jornada fazem esse game ser comparado com Shadow of the colossus.", grande:false },
-	{ nome:"The Binding of Isaac",  img:"isaac.jpeg",             link:"http://vaugette.com/21435391/binding-of-isaac", descricao:"O melhor jogo já feito. Uma jogabilidade unica, esse difícil rougue-like consegue irritar o mais calmo dos jogadores.", grande:false },
-	{ nome:"The Escapist",          img:"theescapist.jpg",        link:"http://cesinthi.com/21435391/the-escapists", descricao:"Ja imaginou como seria ser um preso e fugir de sua prisão? Com the escapist seu objetivo é fugir de todas as cadeias, mas para isso você precisará de um bom plano.", grande:false },
-	{ nome:"The Sims 3",            img:"thesims3.jpg",           link:"http://vaugette.com/21435391/the-sims-3", descricao:"Não consegue chegar na gatinha ou ta querendo a morte de alguem?Cria ele(a) no the sims e faça o que você quiser.", grande:false },
-	{ nome:"This War of Mine",      img:"thiswarofmine.jpg",      link:"http://vaugette.com/21435391/this-war-of-mine", descricao:"Sobreviva a uma guerra, diferente de muitos jogos de sobrevivência onde seu foco são os militares,nesse o seu objetivo são os cívis.", grande:false },
-	{ nome:"Undertale",             img:"undertale.png",          link:"http://cesinthi.com/21435391/undertale", descricao:"Vai mata geral ou ser o pacifista? Escolha seu lado em duelos divertidos, com personagens carismáticos no indie mais famoso ja feito.", grande:false },
-	{ nome:"Unreal Tournament",     img:"unrealtournament.jpg",   link:"http://vaugette.com/21435391/unreal-tournament", descricao:"Um dos mais fomosos jogos de 1999, nesse clássico fps você joga um torneio para retirar sua pena de morte em uma prisão galática.", grande:false },
-	{ nome:"We Need to go deeper",  img:"weneedtogodeeper.jpg",   link:"http://cesinthi.com/21435391/we-need-to-go-deeper", descricao:"Jogue por lan com seus amigos, controle um submarino e divida tarefas para ir o mais fundo possivel, um bom teamwork é necessário.<br><br>\"Bora fundo no cu do thanos\" - Homem Formiga", grande:true },
-	{ nome:"Zelda Ocarina of Time", img:"zeldaocarinaoftime.png", link:"http://ethobleo.com/21435391/zelda-ocarina-of-time", descricao:"Hey! Listen! <br>EMULADOR JA INCLUSO.", grande:true},
-  { nome:"Megaman 2",             img:"megaman2.png",           link:"http://cesinthi.com/21435391/mega-man-2", descricao:"Um dos grandes clássicos dos jogos de plataforma, Megaman 2 consegue ser uma obra de arte dos jogos.<br>EMULADOR JÁ INCLUSO", grande:false},
-	{ nome:"Worms Armageddon",      img:"worms.jpg",              link:"http://ethobleo.com/21435391/worms", descricao:"Um dos jogos mais divertidos para dar aquela zuada, com uma resolução cagada d+ esse complexo simulador de guerra entre gangues de minhocas eh uma boa deixa pra curti com a galera.", grande:true},
-	{ nome:"CS 1.6",      					img:"cs.jpg",              		link:"http://cesinthi.com/21435391/cs",    descricao:"Essencial para qualquer gamer de verdade, esse clássico dos games retrata uma guerra entre terroristas e contra-terroristas, rende horas de diversão se jogado com os mano firmeza.", grande:false},
-	{ nome:"FEZ",      					    img:"fez.jpg",                link:"http://vaugette.com/21435391/fez",    descricao:"Um lindo indie que mexe com a perspectiva do jogador para contar a história de Gomez uma criatura que acha que vivi em um mundo 2D até que... só jogando pra saber.", grande:false},
-	{ nome:"Gunpoint",      				img:"gunpoint.jpg",           link:"http://vaugette.com/21435391/gunpoint",    descricao:"Manja Deadbolt? Então gameplay bem parecida, mas conta a história de um espião que entra em lugares de alta segurança para pegar informações importantes.", grande:false},
-	{ nome:"Horizon Chase Turbo",   img:"horizonchaseturbo.jpg",  link:"http://vaugette.com/21435391/horizon-chase-turbo",    descricao:"Uma linda homenagem aos jogos de corrida antigos, Horizon Chase Turbo é considerado o sucessor espiritual de Top Gear e conta com o mesmo musico do clássico para sua espetacular trilha sonora. ", grande:true},
-	{ nome:"Keep Talking and Nobody Explodes", img:"keeptalking.jpg", link:"http://vaugette.com/21435391/keep-talking", descricao:"FALA PORRA OU NOIS EXPLODE KRAI AAAAAA <br> O manual ta nos arquivos, mas tem na internet", grande:true},
-	{ nome:"Overcooked",      		  img:"overcooked.jpeg",        link:"http://vaugette.com/21435391/overcooked",    descricao:"O melhor simulador de cozinha, sem a parte de simulador e com os restaurantes mais bizarros ja vistos.", grande:false},
-	{ nome:"Punch Club", 					  img:"punchclub.jpg",          link:"http://vaugette.com/21435391/punch-club",    descricao:"Alcance a glória com o seu campeão, e entre nessa história inspirada no Rocky Balboa, com muitos desafios no seu caminho e um grande mistério por trás.", grande:false},
-	{ nome:"Spelunky",   					  img:"spelunky.jpg",           link:"http://cesinthi.com/21435391/spelunky",    descricao:"Explore uma caverna à la Indiana Jones, resgate princesas e pegue o tesouro nesse simples rougue-like.", grande:false},
-	{ nome:"Stardew Valley",			  img:"stardewvalley.jpg",      link:"http://vaugette.com/21435391/stardew-valley",    descricao:"Esse é o farmville aprimorado, cuide de uma fazenda e socialize com a galera da cidade.", grande:false},
-	{ nome:"SteamWorld Dig 2",					  img:"steamworld.jpg",         link:"http://vaugette.com/21435391/steam-world",    descricao:"Seu objetivo nesse jogo é cavar como se não houvesse amanhã.", grande:false},
-	{ nome:"Towerfall Ascension",   img:"towerfall.png",          link:"http://vaugette.com/21435391/towerfall-ascension",    descricao:"O que dizer desse incrivel inde para jogar com os manos e descobrir quem é o melhor arqueiro", grande:false},
-	{ nome:"Battleblock Theater",	  img:"battleblocktheater.jpg", link:"http://vaugette.com/21435391/batleblock-theater",    descricao:"Mais um da Behemonth, battleblock theater é um exelente jogo de puzzles e conta uma história divertida com um narrador SENSACIONAL", grande:false},
-	{ nome:"Islanders",      				img:"islanders.jpg",          link:"http://vaugette.com/21435391/islanders",    descricao:"Crie sua ilha para juntar pontos e passar de nível. Posicione suas construções nos lugares ideais para não perder sua glória!", grande:false},
-	{ nome:"Super Meat Boy",  		  img:"supermeatboy.jpg",       link:"http://vaugette.com/21435391/super-meat-boy",    descricao:"A mesmas mentes que criaram the binding of isaac fizeram esse jogo antes, com fases impossiveis seu objetivo é salvar a menina badage do Dr.Fetus. ", grande:false},
-	{ nome:"Tricky Towers",      		img:"trickytowers.png",       link:"http://vaugette.com/21435391/tricky-towers",    descricao:"Tetris com física.", grande:false},
-	{ nome:"Ultimate Chicken Horse", img:"ultimatechickenhorse.jpg", link:"http://vaugette.com/21435391/ultimate-chicken-horse", descricao:"Monte uma fase com seus amigos para saber quem é o cavalo-galinha ultimate.", grande:true},
-	{ nome:"Scribblenauts Unlimited", img:"scribblenauts.jpg",    link:"http://vaugette.com/21435391/scribblenauts-unlimited",    descricao:"Com o poder da escrita você pode tudo.", grande:true},
-	{ nome:"Spore",      					  img:"spore.jpg",              link:"http://vaugette.com/21435391/spore",    descricao:"De um ser unicelular até um aventureiro espacial, crie uma espécie e a evolua para a dominação universal.", grande:false},
-	{ nome:"Hollow Knight",				  img:"hollowknight.jpg",       link:"http://vaugette.com/21435391/hollow-knight",    descricao:"Controle um besouro em um ninho cheio de insetos fodas.", grande:false},
-	{ nome:"Hotline Miami",				  img:"hotlinemiami.png",       link:"http://vaugette.com/21435391/hotline-miami",    descricao:"Viva a vida de um filme de ação daqueles onde os bandidos entram em algum lugar e matam geral.", grande:false},
-	{ nome:"Katana Zero",				    img:"katanazero.jpg",         link:"http://vaugette.com/21435391/katana-zero",    descricao:"Slash, Dash e manipule o tempo para desvendar o seu passado em uma exibição acrobática belamente brutal.", grande:false},
-	{ nome:"Prision Architect",   img:"prisionarchitect.jpg",   link:"http://vaugette.com/21435391/prision-architect",    descricao:"Seja o gestor de uma prisão e veja a dificultade de controlar os presos.", grande:false},
-	{ nome:"Speed Runners",				  img:"speedrunners.jpg",       link:"http://vaugette.com/21435391/speed-runners",    descricao:"Quem é o melhor corredor dos seus amigos? Descubra nesse jogo FODA", grande:false},
+	{ nome:"Age of Empires",        img:"AOE2.png",               link:"http://cesinthi.com/21435391/age-of-empires", descricao:"Um dos maiores simuladores senão o maior clássico dos jogos de simulação.Na segunda edição da renomada serie Age of Empires, o jogador deve gerenciar uma das 13 civilizações jogáveis na Idade Medieval" },
+	{ nome:"Broforce",              img:"broforce.jpg",           link:"http://cesinthi.com/21435391/broforce", descricao:"Atores de holywood musculosos com armas fodas lutando pelos EUA em diversas guerras.Tem algo mais americano que isso?Jogue offline,online ou dividindo o teclado com algum amigo." },
+	{ nome:"COD black ops",         img:"cod.jpg",                link:"http://vaugette.com/21435391/call-of-duty-bo", descricao:"Sem palavras para descrever essa maravilha, marcou a infância de muitos.Jogue os diversos modos sozinhos e o Zombies com os seus parças." },
+	{ nome:"Castle Crashers",       img:"castlecrashers.jpg",     link:"http://cesinthi.com/21435391/castle-crashers", descricao:"Escolhe uma cor, um cavaleiro e vá em busca das princesas mais feias dos mundos digitais.Esse jogo da Behemonth é imperdivel para qualquer um que se preze." },
+	{ nome:"Celeste",               img:"celeste.png",            link:"http://vaugette.com/21435391/celeste", descricao:"Concorreu a melhor jogo de 2018, esse surpreendente jogo de plataforma mostra a evolução de Madaleine e a superação dela sobre seus obscuros problemas" },
+	{ nome:"Cuphead",               img:"cuphead.jpg",            link:"http://vaugette.com/21435391/cuphead", descricao:"O melhor indie de 2017, esse dificil jogo de plataforma junta gráficos unicos feitos a mão e uma trilha sonora perfeita." },
+	{ nome:"Deadbolt",              img:"deadbolt.jpg",           link:"http://vaugette.com/21435391/deadbolt", descricao:"Controle a morte, seja o  mais silencioso possível para acabar com os malfeitores da sua cidade. " },
+	{ nome:"Dead Cells",            img:"deadcells.jpg",          link:"http://vaugette.com/21435391/deadcells", descricao:"Esse indie rouge-like consegue com uma jogabilidade fantástica homenagear os antigos metroidvanias.Dead Cells é muito divertido e conta com um gráfico pixelado e uma trilha sonora linda d+." },
+	{ nome:"Diablo 2 ",             img:"diablo2.jpg",            link:"http://vaugette.com/21435391/diablo-ii", descricao:"Aquele rpgzao antigo bem feito pra porra, diablo 2 é um dos mais famosos rpgs de 2000 e com certeza vale a pena se aventurar nessas dungeons." },
+	{ nome:"Domina",                img:"domina.png",             link:"http://cesinthi.com/21435391/domina", descricao:"Ja imaginou controlar os soldados do coliseu? Gerencie recursos, treine soldados e vá se exibir e defender seu reino em divertidas lutas."  },
+	{ nome:"Enter the Gungeon",     img:"enterthegungeon.jpg",    link:"http://cesinthi.com/21435391/enter-the-gungeon", descricao:"Um dos melhores rougue-likes da atualidade, entre em gungeons onde os inimigos são balas que disparam balar."  },
+	{ nome:"Evoland",               img:"evoland.jpg",            link:"http://cesinthi.com/21435391/evoland", descricao:"Começe num simples 2D 2 EVOLUA para um lindo game 3D, com muitas homenagens a Zelda e a outros clássicos."},
+	{ nome:"Game Dev Tycoon",       img:"gamedevtycoon.png",      link:"http://cesinthi.com/21435391/game-dev-tycoon", descricao:"Não sabe progrmar, mas quer falar que desenvolveu algum jogo?Agora você pode pode, com Game Dev Tycoon você gerencia um estudio de desenvovimento de jogos."  },
+	{ nome:"Gang Beasts",           img:"gangbeast.jpg",          link:"http://vaugette.com/21435391/gang-beast", descricao:"Lute com bonecos coloridos com uma física duvidosa para ver quem é o melhor dos seus amigos na porradaria."  },
+	{ nome:"Getting Over It",       img:"gettingoverit.jpg",      link:"http://vaugette.com/21435391/getting-over-it", descricao:"Passe raiva tentando chegar ao céu, com uma jogabilidade unica controle Bennett Foddy preso em um caldeirão com apenas uma enxada para escalar."  },
+	{ nome:"Goat Simulator",        img:"goatsimulator.jpg",      link:"http://vaugette.com/21435391/goat-simulator", descricao:"Esse sensacional simulador leva o jogador a controlar uma cabra em um universo com uma física completamente louca que deixa o jogo muita divertido e engraçado."  },
+	{ nome:"Hyper Light Drifter",   img:"hyperlightdrifter.png",  link:"http://vaugette.com/21435391/hyper-light-drifter", descricao:"Um belo RPG 2D que homenagea jogos 8bit e 16bit, considerado pelo seu criadoa a junção de Zelda e Diablo."  },
+	{ nome:"I am Bread",            img:"iambread.png",           link:"http://vaugette.com/21435391/i-am-bread", descricao:"Eu sou um <i>Pão</i>"  },
+	{ nome:"Into the Breach",       img:"intothebreach.jpg",      link:"http://cesinthi.com/21435391/into-the-breach", descricao:"O melhor jogo de estratégia de 2018, nesse indie de turnos o seu objetivo é defender a sua base de  alienígenas fodas, com robôs mais fodas ainda. "  },
+	{ nome:"Kerbal Space Program",  img:"kerbalspaceprogram.jpg", link:"http://cesinthi.com/21435391/kerbal-space-plan", descricao:"Controle um programa espacial, crie foguetes e tudo mais. Jogue o modo carreira ou o sandbox e se divirta nesse engraçado simulador espacial"  },
+	{ nome:"LEGO Star Wars",        img:"legostarwars.jpg",       link:"http://vaugette.com/21435391/lego-star-wars", descricao:"Em uma galáxia muito, muito distande, reviva a história da franquia Star Wars jogando como bonecos LEGO"  },
+	{ nome:"Left 4 Dead",           img:"left4dead.jpg",          link:"http://vaugette.com/21435391/left-4-dead", descricao:"Deixado para morrer com 3 amgigos(ou bots), nesse clássico jogo apocalíptico, seu objetivo é sobreviver metendo bala em zombie sem vergonha.Se divirta com os carismaticos personagens e as mais diversas armas."  },
+	{ nome:"Mario 64",              img:"mario64.png",            link:"http://cesinthi.com/21435391/mario-64", descricao:"Entre em pinturas e salve a princesa, nesse grande jogo de N64.<br>EMULADOR JA INCLUSO."  },
+	{ nome:"Mario Kart",            img:"mariokart.png",          link:"http://cesinthi.com/21435391/mario-kart", descricao:"Ready! Set! Go!<br>EMULADOR JÁ INCLUSO."  },
+	{ nome:"Mario Party Wii",       img:"marioparty.png",         link:"http://vaugette.com/21435391/mario-party-wii", descricao:"Gosta de jogos de tabuleiro? Gosta de Mario? Pronto ta ai mario party, um jogo digital de tabuleiro do mario com diversos minigames. <br>EMULADOR JÁ INCLUSO."  },
+	{ nome:"New Super Mario Bros",  img:"newsupermariobros.jpg",  link:"http://cesinthi.com/21435391/new-super-mario-bros", descricao:"It's a me mario. <br>EMULADOR JA INCLUSO."  },
+	{ nome:"Papers Please",         img:"papersplease.jpg",       link:"http://cesinthi.com/21435391/papers-pls", descricao:"Trabalhe na fronteira de Arstotzka e perceba o problemas politicos enquanto sustenta sua familia com o pouco dinheiro que tem."  },
+	{ nome:"Pit People",            img:"pitpeople.jpg",          link:"http://vaugette.com/21435391/pit-people", descricao:"Com uma historia engraçada e divertida Pit People oferece um rpg de turnos com uma jogabilidade simples e ganha destaque nos dialogos e personagens engraçados."  },
+	{ nome:"Plague Inc Evolved",    img:"plagueinc.jpg",          link:"http://cesinthi.com/21435391/plague-inc", descricao:"Ja imaginou matar o seu vizinho que não vacinou os filhos? Agora você pode crie uma doença, infecte o mundo todo e mate geral."  },
+	{ nome:"Plants vs Zombies",     img:"plantasvszombies.jpg",   link:"http://cesinthi.com/21435391/plants-vs-zombies", descricao:"Plantas contra Zombies é o maior símbolo vegano na historia dos jogos, nesse classico tower defense você deve defender a sua casa de hordas e hordas de zumbies putos."  },
+	{ nome:"Pokemon Black",         img:"pokemonblack.jpg",       link:"http://cesinthi.com/21435391/pokemon-black", descricao:"A quinta geração de pokemon se passa em uma representação de Nova York e conta com os pokemons mais estranhos de todos, sim isso foi pra você mesmo pokemon sorvet aka Vanillite <br> EMULADOR JA INCLUSO."  },
+	{ nome:"Pokemon Platinum",      img:"pokemonplatinum.jpg",    link:"http://cesinthi.com/21435391/pokemon-platinum", descricao:"Acho que não preciso de palavras para descrever esse jogo, um dos clássicos do Nintendo DS.<br>EMULADOR JA INCLUSO"  },
+	{ nome:"Poly Bridge",           img:"polybridge.jpg",         link:"http://vaugette.com/21435391/poly-bridge", descricao:"Construa pontes para carros passarem, mas cuidado para não passar da verba máxima."  },
+	{ nome:"Star Wars Battlefront", img:"starwarsbf2.jpg",        link:"http://vaugette.com/21435391/starwarsbattlefront2", descricao:"Entre de vez no universo star wars, com essa masterpiece dos fps você participa das maiores e mais loucas guerras spacias."  },
+	{ nome:"Spaceplan",             img:"spaceplan.jpg",          link:"http://cesinthi.com/21435391/spaceplan", descricao:"O melhor clicker ja feito(use auto-clicker pra facilitar disponivel nos softwares), em uma realidade pos apocalíptica, onde a unica coisa que você tem são batatas, se diverta lançando esses tubérculos para um planeta de sua pequena cápsula."  },
+	{ nome:"Stick Fight",           img:"stickfight.jpg",         link:"http://cesinthi.com/21435391/stick-fight", descricao:"Aceite o palito que você é e lute com seus amigos em diversos niveis e com uma caralhada de arma para saber quem é o melhor dos palitin."  },
+	{ nome:"Terraria",              img:"terraria.png",           link:"http://cesinthi.com/21435391/terraria", descricao:"Minecraft 2D so isso vlw."  },
+	{ nome:"Titan Souls",           img:"titan.jpg",              link:"http://cesinthi.com/21435391/titan-souls", descricao:"Sua arma: Um arco com UMA flecha <br><br> Um combate simples e uma bela jornada fazem esse game ser comparado com Shadow of the colossus."  },
+	{ nome:"The Binding of Isaac",  img:"isaac.jpeg",             link:"http://vaugette.com/21435391/binding-of-isaac", descricao:"O melhor jogo já feito. Uma jogabilidade unica, esse difícil rougue-like consegue irritar o mais calmo dos jogadores."  },
+	{ nome:"The Escapist",          img:"theescapist.jpg",        link:"http://cesinthi.com/21435391/the-escapists", descricao:"Ja imaginou como seria ser um preso e fugir de sua prisão? Com the escapist seu objetivo é fugir de todas as cadeias, mas para isso você precisará de um bom plano."  },
+	{ nome:"The Sims 3",            img:"thesims3.jpg",           link:"http://vaugette.com/21435391/the-sims-3", descricao:"Não consegue chegar na gatinha ou ta querendo a morte de alguem?Cria ele(a) no the sims e faça o que você quiser."  },
+	{ nome:"This War of Mine",      img:"thiswarofmine.jpg",      link:"http://vaugette.com/21435391/this-war-of-mine", descricao:"Sobreviva a uma guerra, diferente de muitos jogos de sobrevivência onde seu foco são os militares,nesse o seu objetivo são os cívis."  },
+	{ nome:"Undertale",             img:"undertale.png",          link:"http://cesinthi.com/21435391/undertale", descricao:"Vai mata geral ou ser o pacifista? Escolha seu lado em duelos divertidos, com personagens carismáticos no indie mais famoso ja feito."  },
+	{ nome:"Unreal Tournament",     img:"unrealtournament.jpg",   link:"http://vaugette.com/21435391/unreal-tournament", descricao:"Um dos mais fomosos jogos de 1999, nesse clássico fps você joga um torneio para retirar sua pena de morte em uma prisão galática."  },
+	{ nome:"We Need to go deeper",  img:"weneedtogodeeper.jpg",   link:"http://cesinthi.com/21435391/we-need-to-go-deeper", descricao:"Jogue por lan com seus amigos, controle um submarino e divida tarefas para ir o mais fundo possivel, um bom teamwork é necessário.<br><br>\"Bora fundo no cu do thanos\" - Homem Formiga"  },
+	{ nome:"Zelda Ocarina of Time", img:"zeldaocarinaoftime.png", link:"http://ethobleo.com/21435391/zelda-ocarina-of-time", descricao:"Hey! Listen! <br>EMULADOR JA INCLUSO." },
+  { nome:"Megaman 2",             img:"megaman2.png",           link:"http://cesinthi.com/21435391/mega-man-2", descricao:"Um dos grandes clássicos dos jogos de plataforma, Megaman 2 consegue ser uma obra de arte dos jogos.<br>EMULADOR JÁ INCLUSO" },
+	{ nome:"Worms Armageddon",      img:"worms.jpg",              link:"http://ethobleo.com/21435391/worms", descricao:"Um dos jogos mais divertidos para dar aquela zuada, com uma resolução cagada d+ esse complexo simulador de guerra entre gangues de minhocas eh uma boa deixa pra curti com a galera." },
+	{ nome:"CS 1.6",      					img:"cs.jpg",              		link:"http://cesinthi.com/21435391/cs",    descricao:"Essencial para qualquer gamer de verdade, esse clássico dos games retrata uma guerra entre terroristas e contra-terroristas, rende horas de diversão se jogado com os mano firmeza." },
+	{ nome:"FEZ",      					    img:"fez.jpg",                link:"http://vaugette.com/21435391/fez",    descricao:"Um lindo indie que mexe com a perspectiva do jogador para contar a história de Gomez uma criatura que acha que vivi em um mundo 2D até que... só jogando pra saber." },
+	{ nome:"Gunpoint",      				img:"gunpoint.jpg",           link:"http://vaugette.com/21435391/gunpoint",    descricao:"Manja Deadbolt? Então gameplay bem parecida, mas conta a história de um espião que entra em lugares de alta segurança para pegar informações importantes." },
+	{ nome:"Horizon Chase Turbo",   img:"horizonchaseturbo.jpg",  link:"http://vaugette.com/21435391/horizon-chase-turbo",    descricao:"Uma linda homenagem aos jogos de corrida antigos, Horizon Chase Turbo é considerado o sucessor espiritual de Top Gear e conta com o mesmo musico do clássico para sua espetacular trilha sonora. " },
+	{ nome:"Keep Talking and Nobody Explodes", img:"keeptalking.jpg", link:"http://vaugette.com/21435391/keep-talking", descricao:"FALA PORRA OU NOIS EXPLODE KRAI AAAAAA <br> O manual ta nos arquivos, mas tem na internet" },
+	{ nome:"Overcooked",      		  img:"overcooked.jpeg",        link:"http://vaugette.com/21435391/overcooked",    descricao:"O melhor simulador de cozinha, sem a parte de simulador e com os restaurantes mais bizarros ja vistos." },
+	{ nome:"Punch Club", 					  img:"punchclub.jpg",          link:"http://vaugette.com/21435391/punch-club",    descricao:"Alcance a glória com o seu campeão, e entre nessa história inspirada no Rocky Balboa, com muitos desafios no seu caminho e um grande mistério por trás." },
+	{ nome:"Spelunky",   					  img:"spelunky.jpg",           link:"http://cesinthi.com/21435391/spelunky",    descricao:"Explore uma caverna à la Indiana Jones, resgate princesas e pegue o tesouro nesse simples rougue-like." },
+	{ nome:"Stardew Valley",			  img:"stardewvalley.jpg",      link:"http://vaugette.com/21435391/stardew-valley",    descricao:"Esse é o farmville aprimorado, cuide de uma fazenda e socialize com a galera da cidade." },
+	{ nome:"SteamWorld Dig 2",					  img:"steamworld.jpg",         link:"http://vaugette.com/21435391/steam-world",    descricao:"Seu objetivo nesse jogo é cavar como se não houvesse amanhã." },
+	{ nome:"Towerfall Ascension",   img:"towerfall.png",          link:"http://vaugette.com/21435391/towerfall-ascension",    descricao:"O que dizer desse incrivel inde para jogar com os manos e descobrir quem é o melhor arqueiro" },
+	{ nome:"Battleblock Theater",	  img:"battleblocktheater.jpg", link:"http://vaugette.com/21435391/batleblock-theater",    descricao:"Mais um da Behemonth, battleblock theater é um exelente jogo de puzzles e conta uma história divertida com um narrador SENSACIONAL" },
+	{ nome:"Islanders",      				img:"islanders.jpg",          link:"http://vaugette.com/21435391/islanders",    descricao:"Crie sua ilha para juntar pontos e passar de nível. Posicione suas construções nos lugares ideais para não perder sua glória!" },
+	{ nome:"Super Meat Boy",  		  img:"supermeatboy.jpg",       link:"http://vaugette.com/21435391/super-meat-boy",    descricao:"A mesmas mentes que criaram the binding of isaac fizeram esse jogo antes, com fases impossiveis seu objetivo é salvar a menina badage do Dr.Fetus. " },
+	{ nome:"Tricky Towers",      		img:"trickytowers.png",       link:"http://vaugette.com/21435391/tricky-towers",    descricao:"Tetris com física." },
+	{ nome:"Ultimate Chicken Horse", img:"ultimatechickenhorse.jpg", link:"http://vaugette.com/21435391/ultimate-chicken-horse", descricao:"Monte uma fase com seus amigos para saber quem é o cavalo-galinha ultimate." },
+	{ nome:"Scribblenauts Unlimited", img:"scribblenauts.jpg",    link:"http://vaugette.com/21435391/scribblenauts-unlimited",    descricao:"Com o poder da escrita você pode tudo." },
+	{ nome:"Spore",      					  img:"spore.jpg",              link:"http://vaugette.com/21435391/spore",    descricao:"De um ser unicelular até um aventureiro espacial, crie uma espécie e a evolua para a dominação universal." },
+	{ nome:"Hollow Knight",				  img:"hollowknight.jpg",       link:"http://vaugette.com/21435391/hollow-knight",    descricao:"Controle um besouro em um ninho cheio de insetos fodas." },
+	{ nome:"Hotline Miami",				  img:"hotlinemiami.png",       link:"http://vaugette.com/21435391/hotline-miami",    descricao:"Viva a vida de um filme de ação daqueles onde os bandidos entram em algum lugar e matam geral." },
+	{ nome:"Katana Zero",				    img:"katanazero.jpg",         link:"http://vaugette.com/21435391/katana-zero",    descricao:"Slash, Dash e manipule o tempo para desvendar o seu passado em uma exibição acrobática belamente brutal." },
+	{ nome:"Prision Architect",     img:"prisionarchitect.jpg",   link:"http://vaugette.com/21435391/prision-architect",    descricao:"Seja o gestor de uma prisão e veja a dificultade de controlar os presos." },
+	{ nome:"Speed Runners",				  img:"speedrunners.jpg",       link:"http://vaugette.com/21435391/speed-runners",    descricao:"Quem é o melhor corredor dos seus amigos? Descubra nesse jogo FODA" },
+	{ nome:"Minecraft",				      img:"minecraft.png",          link:"http://sowernal.com/21435391/minecraft",       descricao:"O melhor jogo pra umas horas seguidas<br>Se reuna com seus amigos, quebre quadrados cinzas, construa sua vila e se diverta :)<br><br>Edite o perfil removendo essa linha: \"-Xmx1G -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn128M\"" },
 ];
-
 
                 jogos.sort(function(a, b){
                   if (a.nome > b.nome)
@@ -141,6 +161,7 @@
 
                 var idGrande = "";
                 var  tabela = document.getElementById("tabela");
+								tabela.innerHTML = "";
                 const tamanhoLinha = 5;
                 const qtosJogos = jogos.length;
                 const qtasLinhas = qtosJogos / tamanhoLinha;
@@ -150,24 +171,27 @@
                   var linha = tabela.insertRow(i);
                   for (j=0; j<tamanhoLinha; j++)
                   {
-                    if (jogos[qualJogo].grande)
-                    {
-                        idGrande = "titulobig1";
-                    }
-										else {
-											idGrande=" ";
-										}
-
-										if(jogos[qualJogo].nome == "Keep Talking and Nobody Explodes" )
+										if (jogos[qualJogo].nome.toLowerCase().indexOf(txt.toString().toLowerCase()) < 0)
 										{
-											idGrande="titulobig2";
+											qualJogo++;
+											j--;
 										}
-                     var cel = linha.insertCell(j);
-                     cel.innerHTML = "<div class= \"card grey darken-2 white-text\"> <div class=\"card-image waves-effect waves-block waves-light\"> <img class=\"activator\" src=\"imagens/"+ jogos[qualJogo].img +"\"> </div> <div class=\"card-content\"> <span class=\"card-title activator\" id=\""+ idGrande +"\">"+ jogos[qualJogo].nome +"<i class=\"material-icons right\">more_vert</i></span><p><a target=\"_blank\" href=\""+ jogos[qualJogo].link +"\">Baixar </a><a target=\"_blank\" href=\""+ jogos[qualJogo].link +"\" class=\"btn-floating waves-effect waves-light blue darken-4 btn-small pulse\"><i class=\"material-icons\">cloud_download</i></a></p> </div> <div class=\"card-reveal grey darken-2 white-text\"> <span class=\"card-title white-text\">"+ jogos[qualJogo].nome +"<i class=\"material-icons right\">close</i></span> <p>"+ jogos[qualJogo].descricao +"</p>  </div> </div>";
-                     qualJogo++;
+										else
+										{
+												var n = jogos[qualJogo].nome.length;
+												if (n > 15)
+													idGrande = "titulobig1";
+												else if (n > 25)
+													idGrande = "titulobig2";
+												else
+													idGrande="";
+
+	                     var cel = linha.insertCell(j);
+	                     cel.innerHTML = "<div class= \"card grey darken-2 white-text\"> <div class=\"card-image waves-effect waves-block waves-light\"> <img class=\"activator\" src=\"imagens/"+ jogos[qualJogo].img +"\"> </div> <div class=\"card-content\"> <span class=\"card-title activator\" id=\""+ idGrande +"\">"+ jogos[qualJogo].nome +"<i class=\"material-icons right\">more_vert</i></span><p><a target=\"_blank\" href=\""+ jogos[qualJogo].link +"\">Baixar </a><a target=\"_blank\" href=\""+ jogos[qualJogo].link +"\" class=\"btn-floating waves-effect waves-light blue darken-4 btn-small pulse\"><i class=\"material-icons\">cloud_download</i></a></p> </div> <div class=\"card-reveal grey darken-2 white-text\"> <span class=\"card-title white-text\">"+ jogos[qualJogo].nome +"<i class=\"material-icons right\">close</i></span> <p>"+ jogos[qualJogo].descricao +"</p>  </div> </div>";
+	                     qualJogo++;
+										}
                   }
                 }
-
             }
 
 
