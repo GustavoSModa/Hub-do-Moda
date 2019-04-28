@@ -14,22 +14,24 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="https://fonts.googleapis.com/css?family=Heebo|Lato|Montserrat" rel="stylesheet">
 
 	</head>
 	<body>
 
 	<div class="cont">
 		<div class="imagem"></div>
-			<header>
+			<header class="nav">
 				<a href="index.html" class="logo"> Hub do Moda </a>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-				 	<li><a href="jogos.html">Jogos</a></li>
-				 	<li class="active"><a href="softwares.html">Softwares</a></li>
-				 	<li><a href="contato.html">Sugestões</a></li>
+				<ul class="paginas">
+					<li class="pagina"><a href="index.html">Home</a></li>
+				 	<li class="pagina"><a href="jogos.html">Jogos</a></li>
+				 	<li class="active pagina"><a href="softwares.html">Softwares</a></li>
+				 	<li class="pagina"><a href="contato.html">Sugestões</a></li>
+					<li class="pagina"><a href="faq.html">FAQ</a></li>
 				</ul>
 			</header>
-			<div class="pagina">
+			<div class="pag">
 
 				<img src="imagens/Softwares.png" id="center">
                 <br>
@@ -39,7 +41,7 @@
 											<div class="input-field">
 												<input id="search" type="search" class="grey lighten-3 black-text">
 												<label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
-												<i class="material-icons black-text">close</i>
+												<i class="material-icons black-text" onclick="cancelaBusca()">close</i>
 											</div>
 										</form>
 									</div>
@@ -61,6 +63,12 @@
 					fazerTabela(document.getElementById("search").value);
 					someBug();
 					return false;
+				}
+
+				function cancelaBusca()
+				{
+					var busca = document.getElementById("search");
+					search.value = "";
 				}
 
 				function fazerTabela(txt)
@@ -142,13 +150,13 @@ function myFunction() {
 					<div class="row">
 						<div class="col l6 s12">
 							<h5 class="white-text">Hub do Moda</h5>
-							<p class="grey-text text-lighten-4">Apreoveitem a Hub</p>
+							<p class="grey-text text-lighten-4">Apreoveitem</p>
 						</div>
 					</div>
 				</div>
 				<div class="footer-copyright">
 					<div class="container">
-					© 2019 Gustavo Moda & Ivan Knobel
+					© 2019 Hub do Moda
 					<p class="grey-text text-lighten-4 right">oi eu sou o moda <a class="grey-text text-lighten-4" href="https://www.youtube.com/watch?v=VE03o9NUSJw">:)</a></p>
 					</div>
 				</div>

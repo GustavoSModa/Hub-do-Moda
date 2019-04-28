@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+	<title>Hub do Moda - FAQ</title>
+    <link rel="icon" href="imagens/favicon-32x32.png">
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<meta name="description" content=""/>
+	<meta name="keywords" content=""/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/master.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="https://fonts.googleapis.com/css?family=Heebo|Lato|Montserrat" rel="stylesheet">
+
+	</head>
+	<body>
+
+	<div class="cont">
+		<div class="imagem"></div>
+			<header class="nav">
+				<a href="index.html" class="logo"> Hub do Moda </a>
+				<ul class="paginas">
+					<li class="pagina"><a href="index.html">Home</a></li>
+				 	<li class="pagina"><a href="jogos.html">Jogos</a></li>
+				 	<li class="pagina"><a href="softwares.html">Softwares</a></li>
+				 	<li class="pagina"><a href="contato.html">Sugestões</a></li>
+          <li class="active pagina"><a href="faq.html">FAQ</a></li>
+				</ul>
+			</header>
+			<div class="pag">
+
+      <img src="imagens/faq.png" id="center"> <br>
+
+  <ul class="collapsible">
+      <li>
+        <div class="collapsible-header grey darken-2 white-text"><i class="material-icons">security</i>Os arquivos tem vírus?</div>
+        <div class="collapsible-body grey lighten-1 black-text"><span>Não! Todos os nossos arquivos foram verificados e estão 100% livres de vírus ou qualquer malware.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header grey darken-2 white-text"><i class="material-icons">error_outline</i>O arquivo da erros como d3dx9_43.dll, o que fazer?</div>
+        <div class="collapsible-body grey lighten-1 black-text"><span>Erros de dll ou DirectX na hora de executar o arquivo não são erros do site, e sim do seu computador. Se isso acontecer, tente instalar o dll se tiver benefícios de administrador,
+          caso contrário não tem o que fazer, só escolher outro jogo pra jogar.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header grey darken-2 white-text"><i class="material-icons">bug_report</i>Meu jogo está dando erro na gameplay, e agora?</div>
+        <div class="collapsible-body grey lighten-1 black-text"><span>Primeiro, veja se o erro está no jogo ou no seu computador. Peça para um amigo baixar o mesmo jogo e testar para ver se também da o bug. Se o problema realmente
+        estiver no arquivo, explique o que está acontecendo no <a href="contato.html">formulário de sugestões</a>.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header grey darken-2 white-text"><i class="material-icons">cloud_download</i>Eu preciso de WinRar para fazer o download dos arquivos? Como baixar?</div>
+        <div class="collapsible-body grey lighten-1 black-text"><span>Sim, você precisa de WinRar para fazer todos os downloads do site. Se você não tiver, baixe usando <a href="https://www.winrarbrasil.com.br/winrar/download.mv">
+        esse link</a>.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header grey darken-2 white-text"><i class="material-icons">videogame_asset</i>Como eu posso sugerir um jogo?</div>
+        <div class="collapsible-body grey lighten-1 black-text"><span>Entre na nossa página de contato <a href="contato.html">aqui</a> e dê a sua opinião sobre a hub!</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header grey darken-2 white-text"><i class="material-icons">phone_missed</i>Por que o jogo que eu sugeri não foi adicionado?</div>
+        <div class="collapsible-body grey lighten-1 black-text"><span>Se você sugeriu o jogo recentemente, paciência. Estamos recebendo muitas sugestões e <a onclick="moda(this)" class="black-text">o processo de adicionar um jogo é demorado</a>. Outro caso que pode ter
+        ocorrido é que você pediu um jogo muito pesado. Nós damos preferência a jogos leves, para poderem rodar na maioria dos computadores e caber nos Drive.</span></div>
+      </li>
+</ul>
+
+			</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+<script>
+
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+
+  function moda(texto)
+  {
+    if(texto.innerHTML == "o processo de adicionar um jogo é demorado")
+        texto.innerHTML = "<i>o Moda é preguiçoso e demora pra por jogo novo</i>";
+    else
+        texto.innerHTML = "o processo de adicionar um jogo é demorado";
+  }
+
+</script>
+</body>
+<footer class="page-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col l6 s12">
+							<h5 class="white-text">Hub do Moda</h5>
+							<p class="grey-text text-lighten-4">Apreoveitem</p>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="container">
+					© 2019 Hub do Moda
+					<p class="grey-text text-lighten-4 right">oi eu sou o moda:)</p>
+					</div>
+				</div>
+			</footer>
+</html>

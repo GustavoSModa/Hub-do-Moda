@@ -14,22 +14,25 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="https://fonts.googleapis.com/css?family=Heebo|Lato|Montserrat" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
 <body>
 
   <div class="cont">
     <div class="imagem"></div>
-      <header>
+      <header class="nav">
         <a href="index.html" class="logo"> Hub do Moda </a>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li class="active"><a href="jogos.html">Jogos</a></li>
-          <li><a href="softwares.html">Softwares</a></li>
-          <li><a href="contato.html">Sugestões</a></li>
+        <ul class="paginas">
+          <li class="pagina"><a href="index.html">Home</a></li>
+          <li class="active pagina"><a href="jogos.html">Jogos</a></li>
+          <li class="pagina"><a href="softwares.html">Softwares</a></li>
+          <li class="pagina"><a href="contato.html">Sugestões</a></li>
+					<li class="pagina"><a href="faq.html">FAQ</a></li>
         </ul>
       </header>
-      <div class="pagina">
+      <div class="pag">
 
         <main>
 
@@ -39,9 +42,9 @@
 		<div class="nav-wrapper">
 			<form id="pesquisa" onsubmit="return pesquisou(event)" action="">
         <div class="input-field">
-          <input id="search" type="search" class="grey lighten-3 black-text">
+          <input id="search" type="search" class="grey lighten-3 black-text" required>
           <label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
-          <i class="material-icons black-text">close</i>
+          <i class="material-icons black-text" onclick="cancelaBusca()">close</i>
         </div>
       </form>
 		</div>
@@ -57,6 +60,12 @@
       </div>
 
           <script>
+
+					function cancelaBusca()
+					{
+						var busca = document.getElementById("search");
+						search.value = "";
+					}
 
 					function pesquisou(e)
 					{
@@ -89,6 +98,7 @@
 	{ nome:"Gang Beasts",           img:"gangbeast.jpg",          link:"http://vaugette.com/21435391/gang-beast", descricao:"Lute com bonecos coloridos com uma física duvidosa para ver quem é o melhor dos seus amigos na porradaria."  },
 	{ nome:"Getting Over It",       img:"gettingoverit.jpg",      link:"http://vaugette.com/21435391/getting-over-it", descricao:"Passe raiva tentando chegar ao céu, com uma jogabilidade unica controle Bennett Foddy preso em um caldeirão com apenas uma enxada para escalar."  },
 	{ nome:"Goat Simulator",        img:"goatsimulator.jpg",      link:"http://vaugette.com/21435391/goat-simulator", descricao:"Esse sensacional simulador leva o jogador a controlar uma cabra em um universo com uma física completamente louca que deixa o jogo muita divertido e engraçado."  },
+	{ nome:"Geometry Dash",         img:"geometrydash.jpg",       link:"http://sowernal.com/21435391/geometry-dash", descricao:"O clássico jogo de celular em que você é um quadrado pulando sobre obstáculos no ritmo da música. Cuidado pra não quebrar o pc!"  },
 	{ nome:"Hyper Light Drifter",   img:"hyperlightdrifter.png",  link:"http://vaugette.com/21435391/hyper-light-drifter", descricao:"Um belo RPG 2D que homenagea jogos 8bit e 16bit, considerado pelo seu criadoa a junção de Zelda e Diablo."  },
 	{ nome:"I am Bread",            img:"iambread.png",           link:"http://vaugette.com/21435391/i-am-bread", descricao:"Eu sou um <i>Pão</i>"  },
 	{ nome:"Into the Breach",       img:"intothebreach.jpg",      link:"http://cesinthi.com/21435391/into-the-breach", descricao:"O melhor jogo de estratégia de 2018, nesse indie de turnos o seu objetivo é defender a sua base de  alienígenas fodas, com robôs mais fodas ainda. "  },
@@ -130,7 +140,7 @@
 	{ nome:"Punch Club", 					  img:"punchclub.jpg",          link:"http://vaugette.com/21435391/punch-club",    descricao:"Alcance a glória com o seu campeão, e entre nessa história inspirada no Rocky Balboa, com muitos desafios no seu caminho e um grande mistério por trás." },
 	{ nome:"Spelunky",   					  img:"spelunky.jpg",           link:"http://cesinthi.com/21435391/spelunky",    descricao:"Explore uma caverna à la Indiana Jones, resgate princesas e pegue o tesouro nesse simples rougue-like." },
 	{ nome:"Stardew Valley",			  img:"stardewvalley.jpg",      link:"http://vaugette.com/21435391/stardew-valley",    descricao:"Esse é o farmville aprimorado, cuide de uma fazenda e socialize com a galera da cidade." },
-	{ nome:"SteamWorld Dig 2",					  img:"steamworld.jpg",         link:"http://vaugette.com/21435391/steam-world",    descricao:"Seu objetivo nesse jogo é cavar como se não houvesse amanhã." },
+	{ nome:"SteamWorld Dig 2",			img:"steamworld.jpg",         link:"http://vaugette.com/21435391/steam-world",    descricao:"Seu objetivo nesse jogo é cavar como se não houvesse amanhã." },
 	{ nome:"Towerfall Ascension",   img:"towerfall.png",          link:"http://vaugette.com/21435391/towerfall-ascension",    descricao:"O que dizer desse incrivel inde para jogar com os manos e descobrir quem é o melhor arqueiro" },
 	{ nome:"Battleblock Theater",	  img:"battleblocktheater.jpg", link:"http://vaugette.com/21435391/batleblock-theater",    descricao:"Mais um da Behemonth, battleblock theater é um exelente jogo de puzzles e conta uma história divertida com um narrador SENSACIONAL" },
 	{ nome:"Islanders",      				img:"islanders.jpg",          link:"http://vaugette.com/21435391/islanders",    descricao:"Crie sua ilha para juntar pontos e passar de nível. Posicione suas construções nos lugares ideais para não perder sua glória!" },
@@ -145,6 +155,12 @@
 	{ nome:"Prision Architect",     img:"prisionarchitect.jpg",   link:"http://vaugette.com/21435391/prision-architect",    descricao:"Seja o gestor de uma prisão e veja a dificultade de controlar os presos." },
 	{ nome:"Speed Runners",				  img:"speedrunners.jpg",       link:"http://vaugette.com/21435391/speed-runners",    descricao:"Quem é o melhor corredor dos seus amigos? Descubra nesse jogo FODA" },
 	{ nome:"Minecraft",				      img:"minecraft.png",          link:"http://sowernal.com/21435391/minecraft",       descricao:"O melhor jogo pra umas horas seguidas<br>Se reuna com seus amigos, quebre quadrados cinzas, construa sua vila e se diverta :)<br><br>Edite o perfil removendo essa linha: \"-Xmx1G -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn128M\"" },
+	{ nome:"Oxygen not Included",   img:"oxygennotincluded.png",  link:"http://sowernal.com/21435391/oxygen-not-included", descricao:"Dos criadores de Don’t Starve, nesse difícil e complexo jogo seu o objetivo é gerenciar uma base subterrânea com problemas em conseguir ar puro ou purificá-lo." },
+	{ nome:"Wild Glory",				    img:"wildglory.jpg",          link:"http://sowernal.com/21435391/wild-glory",    descricao:"Lute contra seus amigos para dominar a plateia do coliseu e descubra quem será o campeão mais aclamado." },
+	{ nome:"Hearthbound",				    img:"hearthbound.png",        link:"http://sowernal.com/21435391/hearthbound",    descricao:"Va atrás de Baron, seu cachorro e embarque nessa jornada com um garoto que lida com depressão, ansiedade e medo (Basicamente um aluno de ensino médio)." },
+	{ nome:"Risk of Rain 2",				img:"riskofrain2.png",        link:"http://sowernal.com/21435391/risk-of-rain-2",    descricao:"Vai chover ou n? Ninguém sabe, só tem um risco <i>ba dun tss</i>.<br>Jogue solo ou junte-se a até quatro amigos para desafiar hordas de monstros, desbloquear novos espólios e encontrar uma maneira de escapar desse planeta." },
+	{ nome:"Move or Die",				    img:"moveordie.jpg",          link:"http://sowernal.com/21435391/move-or-die",    descricao:"SE MEXE AI PORRA OU VAI MORRER VACILÃO BORA BORA<br>Jogue diversos minigames contra seus amigos pra ver quem é o melhor lutador." },
+	{ nome:"Mount Your Friends",		img:"mountyourfriends.jpg",   link:"http://sowernal.com/21435391/mount-your-friends",    descricao:"Monte nos seus amigos e tente fazer a maior torre possível. Quem ficar mais alto ganha!" },
 ];
 
                 jogos.sort(function(a, b){
@@ -192,6 +208,22 @@
 										}
                   }
                 }
+
+								/*var ultima = tabela.insertRow(tabela.rows.length);
+								for (k=0; k<5; k++)
+								{
+									var cel = ultima.insertCell(k);
+									cel.innerHTML = "<div class= \"card grey darken-2 white-text\"> <div class=\"card-image waves-effect waves-block waves-light\"> <img class=\"activator\" src=\"imagens/provisoria.jpg\"> </div> <div class=\"card-content\"> <span class=\"card-title activator\">Provisória<i class=\"material-icons right\">more_vert</i></span><p><a target=\"_blank\" href=\"\">Baixar </a><a target=\"_blank\" href=\"\" class=\"btn-floating waves-effect waves-light blue darken-4 btn-small pulse\"><i class=\"material-icons\">cloud_download</i></a></p> </div> <div class=\"card-reveal grey darken-2 white-text\"> <span class=\"card-title white-text\">Provisória<i class=\"material-icons right\">close</i></span> <p>Desc</p>  </div> </div>";
+								}*/
+								/*var nUltima = tabela.rows.length;
+								var ultima = tabela.rows[1];
+								var n = ultima.cells.length;
+								while (n < 8)
+								{
+									var celNova = ultima.insertCell(n);
+									cel.innerHTML = "<div class= \"card grey darken-2 white-text\"> <div class=\"card-image waves-effect waves-block waves-light\"> <img class=\"activator\" src=\"imagens/provisoria.jpg\"> </div> <div class=\"card-content\"> <span class=\"card-title activator\">Provisória<i class=\"material-icons right\">more_vert</i></span><p><a target=\"_blank\" href=\"\">Baixar </a><a target=\"_blank\" href=\"\" class=\"btn-floating waves-effect waves-light blue darken-4 btn-small pulse\"><i class=\"material-icons\">cloud_download</i></a></p> </div> <div class=\"card-reveal grey darken-2 white-text\"> <span class=\"card-title white-text\">Provisória<i class=\"material-icons right\">close</i></span> <p>Desc</p>  </div> </div>";
+									n++;
+								}*/
             }
 
 
@@ -203,13 +235,13 @@
 					<div class="row">
 						<div class="col l6 s12">
 							<h5 class="white-text">Hub do Moda</h5>
-							<p class="grey-text text-lighten-4">Apreoveitem a Hub</p>
+							<p class="grey-text text-lighten-4">Apreoveitem</p>
 						</div>
 					</div>
 				</div>
 				<div class="footer-copyright">
 					<div class="container">
-					© 2019 Gustavo Moda & Ivan Knobel
+					© 2019 Hub do Moda
 					<p class="grey-text text-lighten-4 right">oi eu sou o moda :)</p>
 					</div>
 				</div>

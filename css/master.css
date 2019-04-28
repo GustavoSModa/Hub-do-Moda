@@ -1,7 +1,9 @@
-body{
+body
+{
     margin: 0;
     padding: 0;
     background-color: lightgray;
+    font-family: 'Heebo', sans-serif;
 }
 
 #sobre div{
@@ -60,7 +62,7 @@ body{
     background-size: cover;
 }
 
-header
+header.nav
 {
     position: sticky;
     top: 0;
@@ -73,7 +75,7 @@ header
     justify-content: space-between;
     align-items: center;
     font-size: 16px;
-    font-family: arial;
+    /*font-family: arial;*/
     z-index: 1;
 }
 
@@ -83,10 +85,10 @@ header
     text-decoration: none;
     font-weight: 700;
     font-size: 24px;
-    font-family: Arial;
+    /*font-family: Arial;*/
 }
 
-ul
+ul.paginas
 {
     display: flex;
     margin: 0;
@@ -94,20 +96,20 @@ ul
     height: 50px;
 }
 
-ul li
+ul.paginas li.pagina
 {
     list-style: none;
     line-height: 50px;
 }
 
-ul li a
+ul li.pagina a
 {
     color: #FFF;
     text-decoration: none;
     padding: 0 20px;
 }
 
-ul li:hover
+ul li.pagina:hover
 {
     background: #595959;
     color: #fff;
@@ -119,7 +121,7 @@ ul li.active
     color: #fff;
 }
 
-.pagina
+.pag
 {
     width: 100%;
     padding: 20px;
@@ -129,6 +131,7 @@ ul li.active
 td div
 {
     z-index: 0;
+    text-align: justify;
 }
 
 .video-tutorial
@@ -141,12 +144,11 @@ td div
 
 .titulo
 {
-    font-family: "arial";
+    /*font-family: "arial";*/
 }
 
 .sobre
 {
-    font-family: "arial";
     font-size: 24px;
     text-align: justify;
 }
