@@ -131,6 +131,10 @@ ul li.active
 td div
 {
     z-index: 0;
+}
+
+td div p.desc
+{
     text-align: justify;
 }
 
@@ -140,11 +144,6 @@ td div
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-}
-
-.titulo
-{
-    /*font-family: "arial";*/
 }
 
 .sobre
