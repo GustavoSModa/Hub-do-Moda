@@ -1,278 +1,285 @@
 <!DOCTYPE html>
 <html>
-<head>
 
-	<title>Hub do Moda - Jogos</title>
-    <link rel="icon" href="imagens/favicon-32x32.png">
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-	<meta name="description" content=""/>
-	<meta name="keywords" content=""/>
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="js/materialize.min.js"></script>
-	<link rel="stylesheet" href="css/master.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<link href="https://fonts.googleapis.com/css?family=Heebo|Lato|Montserrat" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<head>
+		<title>Hub do Moda - Jogos</title>
+		<link rel="icon" href="imagens/favicon-32x32.png">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="css/master.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://fonts.googleapis.com/css?family=Heebo|Lato|Montserrat" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/materialize.min.js"></script>
+
 
 </head>
+
 <body>
+	<div class="imagem"></div>
+					<nav class="nav">
+						<a href="" class="sidenav-trigger left" data-target="mobile-links"><i class="material-icons">menu</i></a>
+						<a href="index.html" class="logo">Hub do Moda</a>
+						<ul class="paginas hide-on-med-and-down">
+							<li class="pagina"><a href="index.html">Home</a></li>
+							 <li class="pagina"><a href="jogos.html">Jogos</a></li>
+							 <li class="pagina active"><a href="softwares.html">Softwares</a></li>
+							 <li class="pagina"><a href="contato.html">Sugestões</a></li>
+							<li class="pagina"><a href="faq.html">FAQ</a></li>
+						</ul>
+					</nav>
+					<ul class="sidenav" id="mobile-links">
+							<img class="responsive-img" src="imagens/bg1SEmEscrita.jpg">
+							<a href="" class="logo"> Hub do Moda </a>
+							<li class="mobile"><a href="index.html">Home</a></li>
+							<li class="active mobile"><a href="jogos.html">Jogos</a></li>
+							<li class="mobile"><a href="softwares.html">Softwares</a></li>
+							<li class="mobile"><a href="contato.html">Sugestões</a></li>
+							<li class="mobile"><a href="faq.html">FAQ</a></li>
+					</ul>
+			<div class="pagina">
+		
+		<div class="pag">
 
-  <div class="cont">
-    <div class="imagem"></div>
-      <header class="nav">
-        <a href="index.html" class="logo"> Hub do Moda </a>
-        <ul class="paginas">
-          <li class="pagina"><a href="index.html">Home</a></li>
-          <li class="active pagina"><a href="jogos.html">Jogos</a></li>
-          <li class="pagina"><a href="softwares.html">Softwares</a></li>
-          <li class="pagina"><a href="contato.html">Sugestões</a></li>
-					<li class="pagina"><a href="faq.html">FAQ</a></li>
-        </ul>
-      </header>
-      <div class="pag">
+			<main>
 
-        <main>
+				<img src="imagens/jogos.png" id="center">
+				<br>
+				<nav>
+					<div class="nav-wrapper">
+						<form id="pesquisa" onsubmit="return pesquisou(event)" action="">
+							<div class="input-field">
+								<input id="search" type="search" class="grey lighten-3 black-text">
+								<label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
+								<i class="material-icons black-text" onclick="cancelaBusca()">close</i>
+							</div>
+						</form>
+					</div>
+				</nav>
 
-            <img src="imagens/jogos.png" id="center">
-            <br>
-	<nav>
-		<div class="nav-wrapper">
-			<form id="pesquisa" onsubmit="return pesquisou(event)" action="">
-        <div class="input-field">
-          <input id="search" type="search" class="grey lighten-3 black-text" required>
-          <label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
-          <i class="material-icons black-text" onclick="cancelaBusca()">close</i>
-        </div>
-      </form>
+				<table id="tabela">
+
+					</tr>
+
+				</table>
+			</main>
+
 		</div>
-	</nav>
 
-        <table id="tabela">
+		<script>
+		$(document).ready(function(){
+			$('.sidenav').sidenav();
+		})
+			function cancelaBusca() {
+				var busca = document.getElementById("search");
+				search.value = "";
+			}
 
-</tr>
+			function pesquisou(e) {
+				e.preventDefault();
+				fazerTabela(document.getElementById("search").value);
+				someBug();
+				return false;
+			}
 
-    </table>
-        </main>
+			fazerTabela("");
 
-      </div>
+			function fazerTabela(txt) {
+				var jogos =
+					[
 
-          <script>
+						{ nome: "Age of Empires", img: "ageofempires", link: "http://cesinthi.com/21435391/age-of-empires", descricao: "Um dos maiores simuladores senão o maior clássico dos jogos de simulação.Na segunda edição da renomada serie Age of Empires, o jogador deve gerenciar uma das 13 civilizações jogáveis na Idade Medieval" },
+						{ nome: "Broforce", img: "broforce", link: "http://cesinthi.com/21435391/broforce", descricao: "Atores de holywood musculosos com armas fodas lutando pelos EUA em diversas guerras.Tem algo mais americano que isso?Jogue offline,online ou dividindo o teclado com algum amigo." },
+						{ nome: "Call of Duty BO1", img: "cod", link: "http://vaugette.com/21435391/call-of-duty-bo", descricao: "Sem palavras para descrever essa maravilha, marcou a infância de muitos.Jogue os diversos modos sozinhos e o Zombies com os seus parças." },
+						{ nome: "Castle Crashers", img: "castlecrashers", link: "http://cesinthi.com/21435391/castle-crashers", descricao: "Escolhe uma cor, um cavaleiro e vá em busca das princesas mais feias dos mundos digitais.Esse jogo da Behemonth é imperdivel para qualquer um que se preze." },
+						{ nome: "Celeste", img: "celeste", link: "http://vaugette.com/21435391/celeste", descricao: "Concorreu a melhor jogo de 2018, esse surpreendente jogo de plataforma mostra a evolução de Madaleine e a superação dela sobre seus obscuros problemas" },
+						{ nome: "Cuphead", img: "cuphead", link: "http://vaugette.com/21435391/cuphead", descricao: "O melhor indie de 2017, esse dificil jogo de plataforma junta gráficos unicos feitos a mão e uma trilha sonora perfeita." },
+						{ nome: "Deadbolt", img: "deadbolt", link: "http://vaugette.com/21435391/deadbolt", descricao: "Controle a morte, seja o  mais silencioso possível para acabar com os malfeitores da sua cidade. " },
+						{ nome: "Dead Cells", img: "deadcells", link: "http://vaugette.com/21435391/deadcells", descricao: "Esse indie rouge-like consegue com uma jogabilidade fantástica homenagear os antigos metroidvanias.Dead Cells é muito divertido e conta com um gráfico pixelado e uma trilha sonora linda d+." },
+						{ nome: "Diablo 2 ", img: "diablo2", link: "http://vaugette.com/21435391/diablo-ii", descricao: "Aquele rpgzao antigo bem feito pra porra, diablo 2 é um dos mais famosos rpgs de 2000 e com certeza vale a pena se aventurar nessas dungeons." },
+						{ nome: "Domina", img: "domina", link: "http://cesinthi.com/21435391/domina", descricao: "Ja imaginou controlar os soldados do coliseu? Gerencie recursos, treine soldados e vá se exibir e defender seu reino em divertidas lutas." },
+						{ nome: "Enter the Gungeon", img: "enterthegungeon", link: "http://cesinthi.com/21435391/enter-the-gungeon", descricao: "Um dos melhores rougue-likes da atualidade, entre em gungeons onde os inimigos são balas que disparam balar." },
+						{ nome: "Evoland", img: "evoland", link: "http://cesinthi.com/21435391/evoland", descricao: "Começe num simples 2D 2 EVOLUA para um lindo game 3D, com muitas homenagens a Zelda e a outros clássicos." },
+						{ nome: "Game Dev Tycoon", img: "gamedevtycoon", link: "http://cesinthi.com/21435391/game-dev-tycoon", descricao: "Não sabe progrmar, mas quer falar que desenvolveu algum jogo?Agora você pode pode, com Game Dev Tycoon você gerencia um estudio de desenvovimento de jogos." },
+						{ nome: "Gang Beasts", img: "gangbeast", link: "http://vaugette.com/21435391/gang-beast", descricao: "Lute com bonecos coloridos com uma física duvidosa para ver quem é o melhor dos seus amigos na porradaria." },
+						{ nome: "Getting Over It", img: "gettingoverit", link: "http://vaugette.com/21435391/getting-over-it", descricao: "Passe raiva tentando chegar ao céu, com uma jogabilidade unica controle Bennett Foddy preso em um caldeirão com apenas uma enxada para escalar." },
+						{ nome: "Goat Simulator", img: "goatsimulator", link: "http://vaugette.com/21435391/goat-simulator", descricao: "Esse sensacional simulador leva o jogador a controlar uma cabra em um universo com uma física completamente louca que deixa o jogo muita divertido e engraçado." },
+						{ nome: "Geometry Dash", img: "geometrydash", link: "http://sowernal.com/21435391/geometry-dash", descricao: "O clássico jogo de celular em que você é um quadrado pulando sobre obstáculos no ritmo da música. Cuidado pra não quebrar o pc!" },
+						{ nome: "Hyper Light Drifter", img: "hyperlightdrifter", link: "http://vaugette.com/21435391/hyper-light-drifter", descricao: "Um belo RPG 2D que homenagea jogos 8bit e 16bit, considerado pelo seu criadoa a junção de Zelda e Diablo." },
+						{ nome: "I am Bread", img: "iambread", link: "http://vaugette.com/21435391/i-am-bread", descricao: "Eu sou um <i>Pão</i>" },
+						{ nome: "Into the Breach", img: "intothebreach", link: "http://cesinthi.com/21435391/into-the-breach", descricao: "O melhor jogo de estratégia de 2018, nesse indie de turnos o seu objetivo é defender a sua base de  alienígenas fodas, com robôs mais fodas ainda. " },
+						{ nome: "Kerbal Space Program", img: "kerbalspaceprogram", link: "http://cesinthi.com/21435391/kerbal-space-plan", descricao: "Controle um programa espacial, crie foguetes e tudo mais. Jogue o modo carreira ou o sandbox e se divirta nesse engraçado simulador espacial" },
+						{ nome: "LEGO Star Wars", img: "legostarwars", link: "http://vaugette.com/21435391/lego-star-wars", descricao: "Em uma galáxia muito, muito distande, reviva a história da franquia Star Wars jogando como bonecos LEGO" },
+						{ nome: "Left 4 Dead", img: "left4dead", link: "http://vaugette.com/21435391/left-4-dead", descricao: "Deixado para morrer com 3 amgigos(ou bots), nesse clássico jogo apocalíptico, seu objetivo é sobreviver metendo bala em zombie sem vergonha.Se divirta com os carismaticos personagens e as mais diversas armas." },
+						{ nome: "Super Mario 64", img: "supermario64", link: "http://cesinthi.com/21435391/mario-64", descricao: "Entre em pinturas e salve a princesa, nesse grande jogo de N64.<br>EMULADOR JA INCLUSO." },
+						{ nome: "Mario Kart", img: "mariokart", link: "http://cesinthi.com/21435391/mario-kart", descricao: "Ready! Set! Go!<br>EMULADOR JÁ INCLUSO." },
+						{ nome: "Mario Party 8", img: "marioparty8", link: "http://vaugette.com/21435391/mario-party-wii", descricao: "Gosta de jogos de tabuleiro? Gosta de Mario? Pronto ta ai mario party, um jogo digital de tabuleiro do mario com diversos minigames. <br>EMULADOR JÁ INCLUSO." },
+						{ nome: "New Super Mario Bros", img: "newsupermariobros", link: "http://cesinthi.com/21435391/new-super-mario-bros", descricao: "It's a me mario. <br>EMULADOR JA INCLUSO." },
+						{ nome: "Papers Please", img: "papersplease", link: "http://cesinthi.com/21435391/papers-pls", descricao: "Trabalhe na fronteira de Arstotzka e perceba o problemas politicos enquanto sustenta sua familia com o pouco dinheiro que tem." },
+						{ nome: "Pit People", img: "pitpeople", link: "http://vaugette.com/21435391/pit-people", descricao: "Com uma historia engraçada e divertida Pit People oferece um rpg de turnos com uma jogabilidade simples e ganha destaque nos dialogos e personagens engraçados." },
+						{ nome: "Plague Inc Evolved", img: "plagueinc", link: "http://cesinthi.com/21435391/plague-inc", descricao: "Ja imaginou matar o seu vizinho que não vacinou os filhos? Agora você pode crie uma doença, infecte o mundo todo e mate geral." },
+						{ nome: "Plants vs Zombies", img: "plantasvszombies", link: "http://cesinthi.com/21435391/plants-vs-zombies", descricao: "Plantas contra Zombies é o maior símbolo vegano na historia dos jogos, nesse classico tower defense você deve defender a sua casa de hordas e hordas de zumbies putos." },
+						{ nome: "Pokemon Black", img: "pokemonblack", link: "http://cesinthi.com/21435391/pokemon-black", descricao: "A quinta geração de pokemon se passa em uma representação de Nova York e conta com os pokemons mais estranhos de todos, sim isso foi pra você mesmo pokemon sorvet aka Vanillite <br> EMULADOR JA INCLUSO." },
+						{ nome: "Pokemon Platinum", img: "pokemonplatinum", link: "http://cesinthi.com/21435391/pokemon-platinum", descricao: "Acho que não preciso de palavras para descrever esse jogo, um dos clássicos do Nintendo DS.<br>EMULADOR JA INCLUSO" },
+						{ nome: "Poly Bridge", img: "polybridge", link: "http://vaugette.com/21435391/poly-bridge", descricao: "Construa pontes para carros passarem, mas cuidado para não passar da verba máxima." },
+						{ nome: "Star Wars Battlefront", img: "starwarsbf2", link: "http://vaugette.com/21435391/starwarsbattlefront2", descricao: "Entre de vez no universo star wars, com essa masterpiece dos fps você participa das maiores e mais loucas guerras spacias." },
+						{ nome: "Spaceplan", img: "spaceplan", link: "http://cesinthi.com/21435391/spaceplan", descricao: "O melhor clicker ja feito(use auto-clicker pra facilitar disponivel nos softwares), em uma realidade pos apocalíptica, onde a unica coisa que você tem são batatas, se diverta lançando esses tubérculos para um planeta de sua pequena cápsula." },
+						{ nome: "Stick Fight", img: "stickfight", link: "http://cesinthi.com/21435391/stick-fight", descricao: "Aceite o palito que você é e lute com seus amigos em diversos niveis e com uma caralhada de arma para saber quem é o melhor dos palitin." },
+						{ nome: "Terraria", img: "terraria", link: "http://cesinthi.com/21435391/terraria", descricao: "Minecraft 2D so isso vlw." },
+						{ nome: "Titan Souls", img: "titan", link: "http://cesinthi.com/21435391/titan-souls", descricao: "Sua arma: Um arco com UMA flecha <br><br> Um combate simples e uma bela jornada fazem esse game ser comparado com Shadow of the colossus." },
+						{ nome: "The Binding of Isaac", img: "thebindingofisaacafterbirth", link: "http://vaugette.com/21435391/binding-of-isaac", descricao: "O melhor jogo já feito. Uma jogabilidade unica, esse difícil rougue-like consegue irritar o mais calmo dos jogadores." },
+						{ nome: "The Escapist", img: "theescapist", link: "http://cesinthi.com/21435391/the-escapists", descricao: "Ja imaginou como seria ser um preso e fugir de sua prisão? Com the escapist seu objetivo é fugir de todas as cadeias, mas para isso você precisará de um bom plano." },
+						{ nome: "The Sims 3", img: "thesims3", link: "http://vaugette.com/21435391/the-sims-3", descricao: "Não consegue chegar na gatinha ou ta querendo a morte de alguem?Cria ele(a) no the sims e faça o que você quiser." },
+						{ nome: "This War of Mine", img: "thiswarofmine", link: "http://vaugette.com/21435391/this-war-of-mine", descricao: "Sobreviva a uma guerra, diferente de muitos jogos de sobrevivência onde seu foco são os militares,nesse o seu objetivo são os cívis." },
+						{ nome: "Undertale", img: "undertale", link: "http://cesinthi.com/21435391/undertale", descricao: "Vai mata geral ou ser o pacifista? Escolha seu lado em duelos divertidos, com personagens carismáticos no indie mais famoso ja feito." },
+						{ nome: "Unreal Tournament", img: "unrealtournament", link: "http://vaugette.com/21435391/unreal-tournament", descricao: "Um dos mais fomosos jogos de 1999, nesse clássico fps você joga um torneio para retirar sua pena de morte em uma prisão galática." },
+						{ nome: "We Need to go deeper", img: "weneedtogodeeper", link: "http://cesinthi.com/21435391/we-need-to-go-deeper", descricao: "Jogue por lan com seus amigos, controle um submarino e divida tarefas para ir o mais fundo possivel, um bom teamwork é necessário.<br><br>\"Bora fundo no cu do thanos\" - Homem Formiga" },
+						{ nome: "Zelda Ocarina of Time", img: "zeldaocarinaoftime", link: "http://ethobleo.com/21435391/zelda-ocarina-of-time", descricao: "Hey! Listen! <br>EMULADOR JA INCLUSO." },
+						{ nome: "Megaman 2", img: "megaman2", link: "http://cesinthi.com/21435391/mega-man-2", descricao: "Um dos grandes clássicos dos jogos de plataforma, Megaman 2 consegue ser uma obra de arte dos jogos.<br>EMULADOR JÁ INCLUSO" },
+						{ nome: "Worms Armageddon", img: "worms", link: "http://ethobleo.com/21435391/worms", descricao: "Um dos jogos mais divertidos para dar aquela zuada, com uma resolução cagada d+ esse complexo simulador de guerra entre gangues de minhocas eh uma boa deixa pra curti com a galera." },
+						{ nome: "CS 1.6", img: "cs", link: "http://cesinthi.com/21435391/cs", descricao: "Essencial para qualquer gamer de verdade, esse clássico dos games retrata uma guerra entre terroristas e contra-terroristas, rende horas de diversão se jogado com os mano firmeza." },
+						{ nome: "FEZ", img: "fez", link: "http://vaugette.com/21435391/fez", descricao: "Um lindo indie que mexe com a perspectiva do jogador para contar a história de Gomez uma criatura que acha que vivi em um mundo 2D até que... só jogando pra saber." },
+						{ nome: "Gunpoint", img: "gunpoint", link: "http://vaugette.com/21435391/gunpoint", descricao: "Manja Deadbolt? Então gameplay bem parecida, mas conta a história de um espião que entra em lugares de alta segurança para pegar informações importantes." },
+						{ nome: "Horizon Chase Turbo", img: "horizonchaseturbo", link: "http://vaugette.com/21435391/horizon-chase-turbo", descricao: "Uma linda homenagem aos jogos de corrida antigos, Horizon Chase Turbo é considerado o sucessor espiritual de Top Gear e conta com o mesmo musico do clássico para sua espetacular trilha sonora. " },
+						{ nome: "Keep Talking and Nobody Explodes", img: "keeptalking", link: "http://vaugette.com/21435391/keep-talking", descricao: "FALA PORRA OU NOIS EXPLODE KRAI AAAAAA <br> O manual ta nos arquivos, mas tem na internet" },
+						{ nome: "Overcooked", img: "overcooked", link: "http://vaugette.com/21435391/overcooked", descricao: "O melhor simulador de cozinha, sem a parte de simulador e com os restaurantes mais bizarros ja vistos." },
+						{ nome: "Punch Club", img: "punchclub", link: "http://vaugette.com/21435391/punch-club", descricao: "Alcance a glória com o seu campeão, e entre nessa história inspirada no Rocky Balboa, com muitos desafios no seu caminho e um grande mistério por trás." },
+						{ nome: "Spelunky", img: "spelunky", link: "http://cesinthi.com/21435391/spelunky", descricao: "Explore uma caverna à la Indiana Jones, resgate princesas e pegue o tesouro nesse simples rougue-like." },
+						{ nome: "Stardew Valley", img: "stardewvalley", link: "http://vaugette.com/21435391/stardew-valley", descricao: "Esse é o farmville aprimorado, cuide de uma fazenda e socialize com a galera da cidade." },
+						{ nome: "SteamWorld Dig 2", img: "steamworlddig2", link: "http://vaugette.com/21435391/steam-world", descricao: "Seu objetivo nesse jogo é cavar como se não houvesse amanhã." },
+						{ nome: "Towerfall Ascension", img: "towerfallascension", link: "http://vaugette.com/21435391/towerfall-ascension", descricao: "O que dizer desse incrivel inde para jogar com os manos e descobrir quem é o melhor arqueiro" },
+						{ nome: "Battleblock Theater", img: "battleblocktheater", link: "http://vaugette.com/21435391/batleblock-theater", descricao: "Mais um da Behemonth, battleblock theater é um exelente jogo de puzzles e conta uma história divertida com um narrador SENSACIONAL" },
+						{ nome: "Islanders", img: "islanders", link: "http://vaugette.com/21435391/islanders", descricao: "Crie sua ilha para juntar pontos e passar de nível. Posicione suas construções nos lugares ideais para não perder sua glória!" },
+						{ nome: "Super Meat Boy", img: "supermeatboy", link: "http://vaugette.com/21435391/super-meat-boy", descricao: "A mesmas mentes que criaram the binding of isaac fizeram esse jogo antes, com fases impossiveis seu objetivo é salvar a menina badage do Dr.Fetus. " },
+						{ nome: "Tricky Towers", img: "trickytowers", link: "http://vaugette.com/21435391/tricky-towers", descricao: "Tetris com física." },
+						{ nome: "Ultimate Chicken Horse", img: "ultimatechickenhorse", link: "http://vaugette.com/21435391/ultimate-chicken-horse", descricao: "Monte uma fase com seus amigos para saber quem é o cavalo-galinha ultimate." },
+						{ nome: "Scribblenauts Unlimited", img: "scribblenauts", link: "http://vaugette.com/21435391/scribblenauts-unlimited", descricao: "Com o poder da escrita você pode tudo." },
+						{ nome: "Spore", img: "spore", link: "http://vaugette.com/21435391/spore", descricao: "De um ser unicelular até um aventureiro espacial, crie uma espécie e a evolua para a dominação universal." },
+						{ nome: "Hollow Knight", img: "hollowknight", link: "http://vaugette.com/21435391/hollow-knight", descricao: "Controle um besouro em um ninho cheio de insetos fodas." },
+						{ nome: "Hotline Miami", img: "hotlinemiami", link: "http://evassmat.com/21435391/hotline-miami", descricao: "Viva a vida de um filme de ação daqueles onde os bandidos entram em algum lugar e matam geral." },
+						{ nome: "Katana Zero", img: "katanazero", link: "http://vaugette.com/21435391/katana-zero", descricao: "Slash, Dash e manipule o tempo para desvendar o seu passado em uma exibição acrobática belamente brutal." },
+						{ nome: "Prision Architect", img: "prisionarchitect", link: "http://vaugette.com/21435391/prision-architect", descricao: "Seja o gestor de uma prisão e veja a dificultade de controlar os presos." },
+						{ nome: "Speed Runners", img: "speedrunners", link: "http://vaugette.com/21435391/speed-runners", descricao: "Quem é o melhor corredor dos seus amigos? Descubra nesse jogo FODA" },
+						{ nome: "Minecraft", img: "minecraft", link: "http://sowernal.com/21435391/minecraft", descricao: "O melhor jogo pra umas horas seguidas<br>Se reuna com seus amigos, quebre quadrados cinzas, construa sua vila e se diverta :)<br><br>Edite o perfil removendo essa linha: \"-Xmx1G -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn128M\"" },
+						{ nome: "Oxygen not Included", img: "oxygennotincluded", link: "http://sowernal.com/21435391/oxygen-not-included", descricao: "Dos criadores de Don’t Starve, nesse difícil e complexo jogo seu o objetivo é gerenciar uma base subterrânea com problemas em conseguir ar puro ou purificá-lo." },
+						{ nome: "Wild Glory", img: "wildglory", link: "http://sowernal.com/21435391/wild-glory", descricao: "Lute contra seus amigos para dominar a plateia do coliseu e descubra quem será o campeão mais aclamado." },
+						{ nome: "Hearthbound", img: "hearthbound", link: "http://sowernal.com/21435391/hearthbound", descricao: "Va atrás de Baron, seu cachorro e embarque nessa jornada com um garoto que lida com depressão, ansiedade e medo (Basicamente um aluno de ensino médio)." },
+						{ nome: "Risk of Rain 2", img: "riskofrain2", link: "http://sowernal.com/21435391/risk-of-rain-2", descricao: "Vai chover ou n? Ninguém sabe, só tem um risco <i>ba dun tss</i>.<br>Jogue solo ou junte-se a até quatro amigos para desafiar hordas de monstros, desbloquear novos espólios e encontrar uma maneira de escapar desse planeta." },
+						{ nome: "Move or Die", img: "moveordie", link: "http://sowernal.com/21435391/move-or-die", descricao: "SE MEXE AI PORRA OU VAI MORRER VACILÃO BORA BORA<br>Jogue diversos minigames contra seus amigos pra ver quem é o melhor lutador." },
+						{ nome: "Mount Your Friends", img: "mountyourfriends", link: "http://sowernal.com/21435391/mount-your-friends", descricao: "Monte nos seus amigos e tente fazer a maior torre possível. Quem ficar mais alto ganha!" },
+						{ nome: "Garry´s Mod", img: "garrysmod", link: "http://evassmat.com/21435391/garrys-mod", descricao: "Feita a partir do clássico Half-Life, nesse divertidissimo jogo você zoa de todas as formas com seus amigos " },
+						{ nome: "Hotline Miami 2", img: "hotlinemiami2", link: "http://vaugette.com/21435391/hotline-miami ", descricao: "O sucessor de Hotline Miami, com gráficos minimamente melhorados e a aquela jogabilidade gostosa de sempre " },
+						{ nome: "Bomberman", img: "bomberman", link: "http://evassmat.com/21435391/bomberman", descricao: "BOOM BOOOM BOOOOOOM <br> Bomberman é aquilo mano ou você conhece ou você mora numa caverna <br> EMULADOR JA INCLUSO" },
+						{ nome: "Rogue Legacy", img: "roguelegacy", link: "http://evassmat.com/21435391/rogue-legacy", descricao: "Entre num castelo cheio de monstros,desafios e chefes. Ao morrer escolha a doença e a classe do seu sucessor   " },
+						{ nome: "Mario Party DS", img: "mariopartyds", link: "http://evassmat.com/21435391/mario-party-ds", descricao: "Com mapas diferentes e novos minigames se dirvirta nessa clássico de DS <br> EMULADOR JA INCLUSO" },
+						{ nome: "Black", img: "black", link: "http://evassmat.com/21435391/black", descricao: "Um dos melhores e mais famosas FPS de PS2 <br> EMULADOR JÁ INCLUSO" },
+						{ nome: "Kirby Super Star Ultra", img: "kirbysuperstarultra", link: "http://evassmat.com/21435391/kirby-super-stars-ultra", descricao: "Um dos melhores jogos de plataforma nos consoles da Nintendo <br> EMULADOR JA INCLUSO" },
+						{ nome: "Kirby´s Return to Dreamland", img: "kirbysreturntodreamland", link: "http://evassmat.com/21435391/kirby-return-to-dreamland", descricao: "O retorno da bola rosa mais carismatica para a Terra dos Sonhos <br> EMULADOR JA INCLUSO." },
+						{ nome: "Simcity", img: "simcity", link: "http://evassmat.com/21435391/sim-city", descricao: "Requisito minimo para ser um politico, gerencie uma cidade e descubra que é muito mais do que só fazer arminha com a mão." },
+						{ nome: "Sonic Adventure DX", img: "sonicadventureDX", link: "http://evassmat.com/21435391/sonic-adventure-dx", descricao: "Ouriço rápido etc etc a história você já sabe, mas te garanto que esse game de ps2 te surpreendera <br> EMULADOR JA INCLUSO" },
+						{ nome: "Frostpunk", img: "frostpunk", link: "http://evassmat.com/21435391/frostpunk", descricao: "Gerencie uma cidade e garanta a sobrevivência da mesma em rigorosos invernos e conflitos." },
+						{ nome: "A Lenda do Herói", img: "alendadoheroi", link: "http://evassmat.com/21435391/a-lenda-do-heroi", descricao: "Embarque nessa cantoria brasileira feita pelos castro brothers e veja diversas homenagens a games antigos enquanto escuta um trilha sonora <i>PERFEITA</i>." },
+						{ nome: "Party Hard", img: "partyhard", link: "http://evassmat.com/21435391/party-hard", descricao: "FESTA DURO TUTS TUTS <br> Invada uma festa e mete geral silenciosamente." },
+						{ nome: "Party Hard 2", img: "partyhard2", link: "http://evassmat.com/21435391/party-hard-2", descricao: "O PÓS DA FESTA TUTS TUTS <br> Mate geral que ta curtindo um batidão com gráficos e mecânicas que não tinham no primeiro jogo." },
+						{ nome: "Weedcraft Inc", img: "weedcraftinc", link: "http://evassmat.com/21435391/weedcraft-inc", descricao: "Mano empresa de makonha precisa de mais? <br> Gerencie uma rede de tráfico, desde a plantação até a venda e entre fundo na cultura e na política do país." },
+						{ nome: "Forager", img: "forager", link: "http://evassmat.com/21435391/forager-sem-virus", descricao: "Inspirado em Stardew Valley nesse mundo aberto 2D seu objetivo é explorar o mapa utilizando recursos que dão spawn do nada para craftar itens ou ter sua fazendinha." },
+						{ nome: "Angry Birds Space", img: "angrybirdsspace", link: "http://evassmat.com/21435391/anfry-birds-space", descricao: "<b>PÁSSAROS PUTOS</b> NO ESPAÇO <br> Nesse all time classic de celular versão espacial você mata porquinhos verdes lançando pássaros com um estilingue." },
+						{ nome: "Road to your City", img: "roadtoyourcity", link: "http://evassmat.com/21435391/road-to-your-city", descricao: "É tipo um Sim City, mas seu objetivo vai além de gerenciar só a sua cidade, já que em Road to Your City você deve também saber gerenciar um time de futebol e fazê-lo chegar à glória." },
+						{ nome: "Smartphone Tycoon", img: "smartphonetycoon", link: "http://evassmat.com/21435391/smartphone-tycoon", descricao: "Acha que fazer videojogos é coisa de criança? <br> Seus problemas acabaram! Com Smartphone Tycoon você gerencia uma empresa de celulares e com certeza consegue fazer algo mais inovador que qualquer iPhone." },
+						{ nome: "Bad Piggies", img: "badpiggies", link: "http://evassmat.com/21435391/bad-piggies", descricao: "Cansado de controlar pássaros putos? <br> Aqui seu objetivo é construir engenhosos veículos para seus porcos chegarem até a linha de chegada ou raptarem um delicioso ovo de uma ave em extinção." },
+						{ nome: "Wizard of Legend", img: "wizardoflegend", link: "http://evassmat.com/21435391/wizard-of-legend", descricao: "Nesse lindíssimo rouge-like você tem que passar pelos 4 elementos(ar, terra, fogo e água), com uma jogabilidade frenética o jogo deixa você usar espadas e feitiços para matar geral e principalmente os bosses." },
+						{ nome: "Osu!", img: "osu", link: "http://evassmat.com/21435391/osu", descricao: "Aquele jogo musical com umas garotas de anime no fundo e um viciado clicando em bolinha com o mouse freneticamente,.Muitos acham q o maior papel de osu é treinar a mira no cs, quando na verdade é para... hmm..... deixa eu ver aqui....... é pra treinar mira msm" },
+						{ nome: "Besiege", img: "besiege", link: "http://evassmat.com/21435391/besiege", descricao: "Monte uma catapulta medieval e destrua tudo ou todos em diferentes níveis nesse jogo com uma física apurada" },
+						{ nome: "Empire of the undergrowth", img: "empireoftheundergrowth", link: "http://evassmat.com/21435391/empire-of-the-undergrowth", descricao: "Estoque comida e levante sua ninhada de formigas nesse bizarro jogo de estratégia em tempo real onde você gerencia um formigueiro." },
+						{ nome: "Call of Duty BO2", img: "callofdutybo2", link: "http://evassmat.com/21435391/call-of-duty-bo2", descricao: "Simplesmente o melhor call of duty já criado.<br>Nesse clássico dos jogos de tiro você pode jogar uma historia legalzinha, um onlinezão >foda< ou um zombies <b>PIKA</b> <br> Agradecimentos especiais para <a class=\"red-text\"href=\"https://www.youtube.com/channel/UCmFeh4hRNtALxfBNbNbGyNQ\">Grandtour Games</a> pelo link :)" },
+						{ nome: "Dont't Starve", img: "dontstarve", link: "http://evassmat.com/21435391/dont-starve", descricao: "NÃO MORRA DE FOME. <br>Nesse quase impossível jogo de sobrevivência você pode criar uma base, explorar o mapa, passar um bilhão de dias vivos ou ir fundo na história do jogo através de portais para desbloquear outros personagens. <br>DLCs já inclusas." },
+						{ nome: "Pikuniku", img: "pikuniku", link: "http://evassmat.com/21435391/pikuniku", descricao: "Esse puzzle-exploration absurdo te leva para um colorido mundo que nem sempre é tão feliz quanto parece.Ajudo personagens peculiares em problemas divertidos." },
+						{ nome: "Rocket League", img: "rocketleague", link: "http://evassmat.com/21435391/rocket-legue", descricao: "FIFA DE CARRO MANO<br>Ok nem tanto,nesse divertidissimo jogo se tem que mandar os gols com uns carros fodas com umas pinturas mais fodas ainda" },
+                        { nome: "Totally Accurate Battle Simulator", img: "totallyaccuratebattlesimulator", link: "http://evassmat.com/21435391/tottaly-acurate-battle-simulator", descricao: "desc" },
+					];
 
-					function cancelaBusca()
-					{
-						var busca = document.getElementById("search");
-						search.value = "";
+				jogos.sort(function (a, b) {
+					if (a.nome > b.nome) {
+						return 1;
 					}
-
-					function pesquisou(e)
-					{
-  					e.preventDefault();
-						fazerTabela(document.getElementById("search").value);
-  					someBug();
-  					return false;
+					if (b.nome > a.nome) {
+						return -1;
 					}
+					return 0;
+				});
 
-            fazerTabela("");
+				var idGrande = "";
+				var tabela = document.getElementById("tabela");
+				tabela.innerHTML = "";
+				const tamanhoLinha = 5;
+				const qtosJogos = jogos.length;
+				const qtasLinhas = qtosJogos / tamanhoLinha;
+				var qualJogo = 0;
+				for (i = 0; i < qtasLinhas; i++) {
+					var linha = tabela.insertRow(i);
+					for (j = 0; j < tamanhoLinha; j++) {
+						if (jogos[qualJogo].nome.toLowerCase().indexOf(txt.toString().toLowerCase()) < 0) {
+							qualJogo++;
+							j--;
+						}
+						else {
+							var n = jogos[qualJogo].nome.length;
+							if (n > 15)
+								idGrande = "titulobig1";
+							else if (n > 25)
+								idGrande = "titulobig2";
+							else
+								idGrande = "";
 
-            function fazerTabela(txt)
-            {
-							var jogos =
-[
+							var cel = linha.insertCell(j);
+							cel.innerHTML = "<div class= \"card grey darken-2 white-text\"> <div class=\"card-image waves-effect waves-block waves-light\"> <img class=\"activator\" src=\"imagens/" + jogos[qualJogo].img + ".jpg\"> </div> <div class=\"card-content\"> <span class=\"card-title activator\" id=\"" + idGrande + "\">" + jogos[qualJogo].nome + "<i class=\"material-icons right\">more_vert</i></span><p><a target=\"_blank\" href=\"" + jogos[qualJogo].link + "\">Baixar </a><a target=\"_blank\" href=\"" + jogos[qualJogo].link + "\" class=\"btn-floating waves-effect waves-light blue darken-4 btn-small pulse\"><i class=\"material-icons\">cloud_download</i></a></p> </div> <div class=\"card-reveal grey darken-2 white-text\"> <span class=\"card-title white-text\">" + jogos[qualJogo].nome + "<i class=\"material-icons right\">close</i></span> <p class=\"desc\">" + jogos[qualJogo].descricao + "</p>  </div> </div>";
+							qualJogo++;
+						}
+					}
+				}
 
-	{ nome:"Age of Empires",        img:"ageofempires",       link:"http://cesinthi.com/21435391/age-of-empires", descricao:"Um dos maiores simuladores senão o maior clássico dos jogos de simulação.Na segunda edição da renomada serie Age of Empires, o jogador deve gerenciar uma das 13 civilizações jogáveis na Idade Medieval" },
-	{ nome:"Broforce",              img:"broforce",           link:"http://cesinthi.com/21435391/broforce", descricao:"Atores de holywood musculosos com armas fodas lutando pelos EUA em diversas guerras.Tem algo mais americano que isso?Jogue offline,online ou dividindo o teclado com algum amigo." },
-	{ nome:"Call of Duty BO1",      img:"cod",                link:"http://vaugette.com/21435391/call-of-duty-bo", descricao:"Sem palavras para descrever essa maravilha, marcou a infância de muitos.Jogue os diversos modos sozinhos e o Zombies com os seus parças." },
-	{ nome:"Castle Crashers",       img:"castlecrashers",     link:"http://cesinthi.com/21435391/castle-crashers", descricao:"Escolhe uma cor, um cavaleiro e vá em busca das princesas mais feias dos mundos digitais.Esse jogo da Behemonth é imperdivel para qualquer um que se preze." },
-	{ nome:"Celeste",               img:"celeste",            link:"http://vaugette.com/21435391/celeste", descricao:"Concorreu a melhor jogo de 2018, esse surpreendente jogo de plataforma mostra a evolução de Madaleine e a superação dela sobre seus obscuros problemas" },
-	{ nome:"Cuphead",               img:"cuphead",            link:"http://vaugette.com/21435391/cuphead", descricao:"O melhor indie de 2017, esse dificil jogo de plataforma junta gráficos unicos feitos a mão e uma trilha sonora perfeita." },
-	{ nome:"Deadbolt",              img:"deadbolt",           link:"http://vaugette.com/21435391/deadbolt", descricao:"Controle a morte, seja o  mais silencioso possível para acabar com os malfeitores da sua cidade. " },
-	{ nome:"Dead Cells",            img:"deadcells",          link:"http://vaugette.com/21435391/deadcells", descricao:"Esse indie rouge-like consegue com uma jogabilidade fantástica homenagear os antigos metroidvanias.Dead Cells é muito divertido e conta com um gráfico pixelado e uma trilha sonora linda d+." },
-	{ nome:"Diablo 2 ",             img:"diablo2",            link:"http://vaugette.com/21435391/diablo-ii", descricao:"Aquele rpgzao antigo bem feito pra porra, diablo 2 é um dos mais famosos rpgs de 2000 e com certeza vale a pena se aventurar nessas dungeons." },
-	{ nome:"Domina",                img:"domina",             link:"http://cesinthi.com/21435391/domina", descricao:"Ja imaginou controlar os soldados do coliseu? Gerencie recursos, treine soldados e vá se exibir e defender seu reino em divertidas lutas."  },
-	{ nome:"Enter the Gungeon",     img:"enterthegungeon",    link:"http://cesinthi.com/21435391/enter-the-gungeon", descricao:"Um dos melhores rougue-likes da atualidade, entre em gungeons onde os inimigos são balas que disparam balar."  },
-	{ nome:"Evoland",               img:"evoland",            link:"http://cesinthi.com/21435391/evoland", descricao:"Começe num simples 2D 2 EVOLUA para um lindo game 3D, com muitas homenagens a Zelda e a outros clássicos."},
-	{ nome:"Game Dev Tycoon",       img:"gamedevtycoon",      link:"http://cesinthi.com/21435391/game-dev-tycoon", descricao:"Não sabe progrmar, mas quer falar que desenvolveu algum jogo?Agora você pode pode, com Game Dev Tycoon você gerencia um estudio de desenvovimento de jogos."  },
-	{ nome:"Gang Beasts",           img:"gangbeast",          link:"http://vaugette.com/21435391/gang-beast", descricao:"Lute com bonecos coloridos com uma física duvidosa para ver quem é o melhor dos seus amigos na porradaria."  },
-	{ nome:"Getting Over It",       img:"gettingoverit",      link:"http://vaugette.com/21435391/getting-over-it", descricao:"Passe raiva tentando chegar ao céu, com uma jogabilidade unica controle Bennett Foddy preso em um caldeirão com apenas uma enxada para escalar."  },
-	{ nome:"Goat Simulator",        img:"goatsimulator",      link:"http://vaugette.com/21435391/goat-simulator", descricao:"Esse sensacional simulador leva o jogador a controlar uma cabra em um universo com uma física completamente louca que deixa o jogo muita divertido e engraçado."  },
-	{ nome:"Geometry Dash",         img:"geometrydash",       link:"http://sowernal.com/21435391/geometry-dash", descricao:"O clássico jogo de celular em que você é um quadrado pulando sobre obstáculos no ritmo da música. Cuidado pra não quebrar o pc!"  },
-	{ nome:"Hyper Light Drifter",   img:"hyperlightdrifter",  link:"http://vaugette.com/21435391/hyper-light-drifter", descricao:"Um belo RPG 2D que homenagea jogos 8bit e 16bit, considerado pelo seu criadoa a junção de Zelda e Diablo."  },
-	{ nome:"I am Bread",            img:"iambread",           link:"http://vaugette.com/21435391/i-am-bread", descricao:"Eu sou um <i>Pão</i>"  },
-	{ nome:"Into the Breach",       img:"intothebreach",      link:"http://cesinthi.com/21435391/into-the-breach", descricao:"O melhor jogo de estratégia de 2018, nesse indie de turnos o seu objetivo é defender a sua base de  alienígenas fodas, com robôs mais fodas ainda. "  },
-	{ nome:"Kerbal Space Program",  img:"kerbalspaceprogram", link:"http://cesinthi.com/21435391/kerbal-space-plan", descricao:"Controle um programa espacial, crie foguetes e tudo mais. Jogue o modo carreira ou o sandbox e se divirta nesse engraçado simulador espacial"  },
-	{ nome:"LEGO Star Wars",        img:"legostarwars",       link:"http://vaugette.com/21435391/lego-star-wars", descricao:"Em uma galáxia muito, muito distande, reviva a história da franquia Star Wars jogando como bonecos LEGO"  },
-	{ nome:"Left 4 Dead",           img:"left4dead",          link:"http://vaugette.com/21435391/left-4-dead", descricao:"Deixado para morrer com 3 amgigos(ou bots), nesse clássico jogo apocalíptico, seu objetivo é sobreviver metendo bala em zombie sem vergonha.Se divirta com os carismaticos personagens e as mais diversas armas."  },
-	{ nome:"Super Mario 64",        img:"supermario64",       link:"http://cesinthi.com/21435391/mario-64", descricao:"Entre em pinturas e salve a princesa, nesse grande jogo de N64.<br>EMULADOR JA INCLUSO."  },
-	{ nome:"Mario Kart",            img:"mariokart",          link:"http://cesinthi.com/21435391/mario-kart", descricao:"Ready! Set! Go!<br>EMULADOR JÁ INCLUSO."  },
-	{ nome:"Mario Party 8",         img:"marioparty8",        link:"http://vaugette.com/21435391/mario-party-wii", descricao:"Gosta de jogos de tabuleiro? Gosta de Mario? Pronto ta ai mario party, um jogo digital de tabuleiro do mario com diversos minigames. <br>EMULADOR JÁ INCLUSO."  },
-	{ nome:"New Super Mario Bros",  img:"newsupermariobros",  link:"http://cesinthi.com/21435391/new-super-mario-bros", descricao:"It's a me mario. <br>EMULADOR JA INCLUSO."  },
-	{ nome:"Papers Please",         img:"papersplease",       link:"http://cesinthi.com/21435391/papers-pls", descricao:"Trabalhe na fronteira de Arstotzka e perceba o problemas politicos enquanto sustenta sua familia com o pouco dinheiro que tem."  },
-	{ nome:"Pit People",            img:"pitpeople",          link:"http://vaugette.com/21435391/pit-people", descricao:"Com uma historia engraçada e divertida Pit People oferece um rpg de turnos com uma jogabilidade simples e ganha destaque nos dialogos e personagens engraçados."  },
-	{ nome:"Plague Inc Evolved",    img:"plagueinc",          link:"http://cesinthi.com/21435391/plague-inc", descricao:"Ja imaginou matar o seu vizinho que não vacinou os filhos? Agora você pode crie uma doença, infecte o mundo todo e mate geral."  },
-	{ nome:"Plants vs Zombies",     img:"plantasvszombies",   link:"http://cesinthi.com/21435391/plants-vs-zombies", descricao:"Plantas contra Zombies é o maior símbolo vegano na historia dos jogos, nesse classico tower defense você deve defender a sua casa de hordas e hordas de zumbies putos."  },
-	{ nome:"Pokemon Black",         img:"pokemonblack",       link:"http://cesinthi.com/21435391/pokemon-black", descricao:"A quinta geração de pokemon se passa em uma representação de Nova York e conta com os pokemons mais estranhos de todos, sim isso foi pra você mesmo pokemon sorvet aka Vanillite <br> EMULADOR JA INCLUSO."  },
-	{ nome:"Pokemon Platinum",      img:"pokemonplatinum",    link:"http://cesinthi.com/21435391/pokemon-platinum", descricao:"Acho que não preciso de palavras para descrever esse jogo, um dos clássicos do Nintendo DS.<br>EMULADOR JA INCLUSO"  },
-	{ nome:"Poly Bridge",           img:"polybridge",         link:"http://vaugette.com/21435391/poly-bridge", descricao:"Construa pontes para carros passarem, mas cuidado para não passar da verba máxima."  },
-	{ nome:"Star Wars Battlefront", img:"starwarsbf2",        link:"http://vaugette.com/21435391/starwarsbattlefront2", descricao:"Entre de vez no universo star wars, com essa masterpiece dos fps você participa das maiores e mais loucas guerras spacias."  },
-	{ nome:"Spaceplan",             img:"spaceplan",          link:"http://cesinthi.com/21435391/spaceplan", descricao:"O melhor clicker ja feito(use auto-clicker pra facilitar disponivel nos softwares), em uma realidade pos apocalíptica, onde a unica coisa que você tem são batatas, se diverta lançando esses tubérculos para um planeta de sua pequena cápsula."  },
-	{ nome:"Stick Fight",           img:"stickfight",         link:"http://cesinthi.com/21435391/stick-fight", descricao:"Aceite o palito que você é e lute com seus amigos em diversos niveis e com uma caralhada de arma para saber quem é o melhor dos palitin."  },
-	{ nome:"Terraria",              img:"terraria",           link:"http://cesinthi.com/21435391/terraria", descricao:"Minecraft 2D so isso vlw."  },
-	{ nome:"Titan Souls",           img:"titan",              link:"http://cesinthi.com/21435391/titan-souls", descricao:"Sua arma: Um arco com UMA flecha <br><br> Um combate simples e uma bela jornada fazem esse game ser comparado com Shadow of the colossus."  },
-	{ nome:"The Binding of Isaac",  img:"thebindingofisaacafterbirth",  link:"http://vaugette.com/21435391/binding-of-isaac", descricao:"O melhor jogo já feito. Uma jogabilidade unica, esse difícil rougue-like consegue irritar o mais calmo dos jogadores."  },
-	{ nome:"The Escapist",          img:"theescapist",        link:"http://cesinthi.com/21435391/the-escapists", descricao:"Ja imaginou como seria ser um preso e fugir de sua prisão? Com the escapist seu objetivo é fugir de todas as cadeias, mas para isso você precisará de um bom plano."  },
-	{ nome:"The Sims 3",            img:"thesims3",           link:"http://vaugette.com/21435391/the-sims-3", descricao:"Não consegue chegar na gatinha ou ta querendo a morte de alguem?Cria ele(a) no the sims e faça o que você quiser."  },
-	{ nome:"This War of Mine",      img:"thiswarofmine",      link:"http://vaugette.com/21435391/this-war-of-mine", descricao:"Sobreviva a uma guerra, diferente de muitos jogos de sobrevivência onde seu foco são os militares,nesse o seu objetivo são os cívis."  },
-	{ nome:"Undertale",             img:"undertale",          link:"http://cesinthi.com/21435391/undertale", descricao:"Vai mata geral ou ser o pacifista? Escolha seu lado em duelos divertidos, com personagens carismáticos no indie mais famoso ja feito."  },
-	{ nome:"Unreal Tournament",     img:"unrealtournament",   link:"http://vaugette.com/21435391/unreal-tournament", descricao:"Um dos mais fomosos jogos de 1999, nesse clássico fps você joga um torneio para retirar sua pena de morte em uma prisão galática."  },
-	{ nome:"We Need to go deeper",  img:"weneedtogodeeper",   link:"http://cesinthi.com/21435391/we-need-to-go-deeper", descricao:"Jogue por lan com seus amigos, controle um submarino e divida tarefas para ir o mais fundo possivel, um bom teamwork é necessário.<br><br>\"Bora fundo no cu do thanos\" - Homem Formiga"  },
-	{ nome:"Zelda Ocarina of Time", img:"zeldaocarinaoftime", link:"http://ethobleo.com/21435391/zelda-ocarina-of-time", descricao:"Hey! Listen! <br>EMULADOR JA INCLUSO." },
-        { nome:"Megaman 2",             img:"megaman2",           link:"http://cesinthi.com/21435391/mega-man-2", descricao:"Um dos grandes clássicos dos jogos de plataforma, Megaman 2 consegue ser uma obra de arte dos jogos.<br>EMULADOR JÁ INCLUSO" },
-	{ nome:"Worms Armageddon",      img:"worms",              link:"http://ethobleo.com/21435391/worms", descricao:"Um dos jogos mais divertidos para dar aquela zuada, com uma resolução cagada d+ esse complexo simulador de guerra entre gangues de minhocas eh uma boa deixa pra curti com a galera." },
-	{ nome:"CS 1.6",      		      img:"cs",                 link:"http://cesinthi.com/21435391/cs",    descricao:"Essencial para qualquer gamer de verdade, esse clássico dos games retrata uma guerra entre terroristas e contra-terroristas, rende horas de diversão se jogado com os mano firmeza." },
-	{ nome:"FEZ",      		          img:"fez",                link:"http://vaugette.com/21435391/fez",    descricao:"Um lindo indie que mexe com a perspectiva do jogador para contar a história de Gomez uma criatura que acha que vivi em um mundo 2D até que... só jogando pra saber." },
-	{ nome:"Gunpoint",            	img:"gunpoint",           link:"http://vaugette.com/21435391/gunpoint",    descricao:"Manja Deadbolt? Então gameplay bem parecida, mas conta a história de um espião que entra em lugares de alta segurança para pegar informações importantes." },
-	{ nome:"Horizon Chase Turbo",   img:"horizonchaseturbo",  link:"http://vaugette.com/21435391/horizon-chase-turbo",    descricao:"Uma linda homenagem aos jogos de corrida antigos, Horizon Chase Turbo é considerado o sucessor espiritual de Top Gear e conta com o mesmo musico do clássico para sua espetacular trilha sonora. " },
-	{ nome:"Keep Talking and Nobody Explodes", img:"keeptalking", link:"http://vaugette.com/21435391/keep-talking", descricao:"FALA PORRA OU NOIS EXPLODE KRAI AAAAAA <br> O manual ta nos arquivos, mas tem na internet" },
-	{ nome:"Overcooked",      	    img:"overcooked",    link:"http://vaugette.com/21435391/overcooked",    descricao:"O melhor simulador de cozinha, sem a parte de simulador e com os restaurantes mais bizarros ja vistos." },
-	{ nome:"Punch Club", 						img:"punchclub",          link:"http://vaugette.com/21435391/punch-club",    descricao:"Alcance a glória com o seu campeão, e entre nessa história inspirada no Rocky Balboa, com muitos desafios no seu caminho e um grande mistério por trás." },
-	{ nome:"Spelunky",   						img:"spelunky",           link:"http://cesinthi.com/21435391/spelunky",    descricao:"Explore uma caverna à la Indiana Jones, resgate princesas e pegue o tesouro nesse simples rougue-like." },
-	{ nome:"Stardew Valley",				img:"stardewvalley",      link:"http://vaugette.com/21435391/stardew-valley",    descricao:"Esse é o farmville aprimorado, cuide de uma fazenda e socialize com a galera da cidade." },
-	{ nome:"SteamWorld Dig 2",			img:"steamworlddig2",         link:"http://vaugette.com/21435391/steam-world",    descricao:"Seu objetivo nesse jogo é cavar como se não houvesse amanhã." },
-	{ nome:"Towerfall Ascension",   img:"towerfallascension", link:"http://vaugette.com/21435391/towerfall-ascension",    descricao:"O que dizer desse incrivel inde para jogar com os manos e descobrir quem é o melhor arqueiro" },
-	{ nome:"Battleblock Theater",		img:"battleblocktheater", link:"http://vaugette.com/21435391/batleblock-theater",    descricao:"Mais um da Behemonth, battleblock theater é um exelente jogo de puzzles e conta uma história divertida com um narrador SENSACIONAL" },
-	{ nome:"Islanders",      				img:"islanders",          link:"http://vaugette.com/21435391/islanders",    descricao:"Crie sua ilha para juntar pontos e passar de nível. Posicione suas construções nos lugares ideais para não perder sua glória!" },
-	{ nome:"Super Meat Boy",  			img:"supermeatboy",       link:"http://vaugette.com/21435391/super-meat-boy",    descricao:"A mesmas mentes que criaram the binding of isaac fizeram esse jogo antes, com fases impossiveis seu objetivo é salvar a menina badage do Dr.Fetus. " },
-	{ nome:"Tricky Towers",      		img:"trickytowers",       link:"http://vaugette.com/21435391/tricky-towers",    descricao:"Tetris com física." },
-	{ nome:"Ultimate Chicken Horse",  img:"ultimatechickenhorse", link:"http://vaugette.com/21435391/ultimate-chicken-horse", descricao:"Monte uma fase com seus amigos para saber quem é o cavalo-galinha ultimate." },
-	{ nome:"Scribblenauts Unlimited", img:"scribblenauts",    link:"http://vaugette.com/21435391/scribblenauts-unlimited",    descricao:"Com o poder da escrita você pode tudo." },
-	{ nome:"Spore",      		        img:"spore",              link:"http://vaugette.com/21435391/spore",    descricao:"De um ser unicelular até um aventureiro espacial, crie uma espécie e a evolua para a dominação universal." },
-	{ nome:"Hollow Knight",					img:"hollowknight",       link:"http://vaugette.com/21435391/hollow-knight",    descricao:"Controle um besouro em um ninho cheio de insetos fodas." },
-	{ nome:"Hotline Miami",					img:"hotlinemiami",       link:"http://evassmat.com/21435391/hotline-miami",    descricao:"Viva a vida de um filme de ação daqueles onde os bandidos entram em algum lugar e matam geral." },
-	{ nome:"Katana Zero",						img:"katanazero",         link:"http://vaugette.com/21435391/katana-zero",    descricao:"Slash, Dash e manipule o tempo para desvendar o seu passado em uma exibição acrobática belamente brutal." },
-	{ nome:"Prision Architect",     img:"prisionarchitect",   link:"http://vaugette.com/21435391/prision-architect",    descricao:"Seja o gestor de uma prisão e veja a dificultade de controlar os presos." },
-	{ nome:"Speed Runners",					img:"speedrunners",       link:"http://vaugette.com/21435391/speed-runners",    descricao:"Quem é o melhor corredor dos seus amigos? Descubra nesse jogo FODA" },
-	{ nome:"Minecraft",							img:"minecraft",          link:"http://sowernal.com/21435391/minecraft",       descricao:"O melhor jogo pra umas horas seguidas<br>Se reuna com seus amigos, quebre quadrados cinzas, construa sua vila e se diverta :)<br><br>Edite o perfil removendo essa linha: \"-Xmx1G -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn128M\"" },
-	{ nome:"Oxygen not Included",   img:"oxygennotincluded",  link:"http://sowernal.com/21435391/oxygen-not-included", descricao:"Dos criadores de Don’t Starve, nesse difícil e complexo jogo seu o objetivo é gerenciar uma base subterrânea com problemas em conseguir ar puro ou purificá-lo." },
-	{ nome:"Wild Glory",						img:"wildglory",          link:"http://sowernal.com/21435391/wild-glory",    descricao:"Lute contra seus amigos para dominar a plateia do coliseu e descubra quem será o campeão mais aclamado." },
-	{ nome:"Hearthbound",						img:"hearthbound",        link:"http://sowernal.com/21435391/hearthbound",    descricao:"Va atrás de Baron, seu cachorro e embarque nessa jornada com um garoto que lida com depressão, ansiedade e medo (Basicamente um aluno de ensino médio)." },
-	{ nome:"Risk of Rain 2",				img:"riskofrain2",        link:"http://sowernal.com/21435391/risk-of-rain-2",    descricao:"Vai chover ou n? Ninguém sabe, só tem um risco <i>ba dun tss</i>.<br>Jogue solo ou junte-se a até quatro amigos para desafiar hordas de monstros, desbloquear novos espólios e encontrar uma maneira de escapar desse planeta." },
-	{ nome:"Move or Die",						img:"moveordie",          link:"http://sowernal.com/21435391/move-or-die",    descricao:"SE MEXE AI PORRA OU VAI MORRER VACILÃO BORA BORA<br>Jogue diversos minigames contra seus amigos pra ver quem é o melhor lutador." },
-	{ nome:"Mount Your Friends",		img:"mountyourfriends",   link:"http://sowernal.com/21435391/mount-your-friends",    descricao:"Monte nos seus amigos e tente fazer a maior torre possível. Quem ficar mais alto ganha!" },
-	{ nome:"Garry´s Mod",						img:"garrysmod",          link:"http://evassmat.com/21435391/garrys-mod",    descricao:"Feita a partir do clássico Half-Life, nesse divertidissimo jogo você zoa de todas as formas com seus amigos " },
-	{ nome:"Hotline Miami 2",			  img:"hotlinemiami2",   		link:"http://vaugette.com/21435391/hotline-miami ",    descricao:"O sucessor de Hotline Miami, com gráficos minimamente melhorados e a aquela jogabilidade gostosa de sempre " },
-	{ nome:"Bomberman",						  img:"bomberman",   				link:"http://evassmat.com/21435391/bomberman",    descricao:"BOOM BOOOM BOOOOOOM <br> Bomberman é aquilo mano ou você conhece ou você mora numa caverna <br> EMULADOR JA INCLUSO" },
-	{ nome:"Rogue Legacy",					img:"roguelegacy",  			link:"http://evassmat.com/21435391/rogue-legacy",    descricao:"Entre num castelo cheio de monstros,desafios e chefes. Ao morrer escolha a doença e a classe do seu sucessor   " },
-	{ nome:"Mario Party DS",				img:"mariopartyds",  		 	link:"http://evassmat.com/21435391/mario-party-ds",    descricao:"Com mapas diferentes e novos minigames se dirvirta nessa clássico de DS <br> EMULADOR JA INCLUSO" },
-	{ nome:"Black", 								img:"black",   						link:"http://evassmat.com/21435391/black",    descricao:"Um dos melhores e mais famosas FPS de PS2 <br> EMULADOR JÁ INCLUSO" },
-	{ nome:"Kirby Super Star Ultra", img:"kirbysuperstarultra", link:"http://evassmat.com/21435391/kirby-super-stars-ultra",    descricao:"Um dos melhores jogos de plataforma nos consoles da Nintendo <br> EMULADOR JA INCLUSO" },
-	{ nome:"Kirby´s Return to Dreamland", img:"kirbysreturntodreamland", link:"http://evassmat.com/21435391/kirby-return-to-dreamland",    descricao:"O retorno da bola rosa mais carismatica para a Terra dos Sonhos <br> EMULADOR JA INCLUSO." },
-	{ nome:"Simcity", 						 img:"simcity",   					link:"http://evassmat.com/21435391/sim-city",    descricao:"Requisito minimo para ser um politico, gerencie uma cidade e descubra que é muito mais do que só fazer arminha com a mão." },
-	{ nome:"Sonic Adventure DX", 	 img:"sonicadventureDX",    link:"http://evassmat.com/21435391/sonic-adventure-dx",    descricao:"Ouriço rápido etc etc a história você já sabe, mas te garanto que esse game de ps2 te surpreendera <br> EMULADOR JA INCLUSO" },
-	{ nome:"Frostpunk", 					 img:"frostpunk",   				link:"http://evassmat.com/21435391/frostpunk",    descricao:"Gerencie uma cidade e garanta a sobrevivência da mesma em rigorosos invernos e conflitos." },
-	{ nome:"A Lenda do Herói",		 img:"alendadoheroi",   		link:"http://evassmat.com/21435391/a-lenda-do-heroi",    descricao:"Embarque nessa cantoria brasileira feita pelos castro brothers e veja diversas homenagens a games antigos enquanto escuta um trilha sonora <i>PERFEITA</i>." },
-	{ nome:"Party Hard",					 img:"partyhard",   				link:"http://evassmat.com/21435391/party-hard",    descricao:"FESTA DURO TUTS TUTS <br> Invada uma festa e mete geral silenciosamente." },
-	{ nome:"Party Hard 2",				 img:"partyhard2",   				link:"http://evassmat.com/21435391/party-hard-2",    descricao:"O PÓS DA FESTA TUTS TUTS <br> Mate geral que ta curtindo um batidão com gráficos e mecânicas que não tinham no primeiro jogo." },
-	{ nome:"Weedcraft Inc",			   img:"weedcraftinc",   			link:"http://evassmat.com/21435391/weedcraft-inc",    descricao:"Mano empresa de makonha precisa de mais? <br> Gerencie uma rede de tráfico, desde a plantação até a venda e entre fundo na cultura e na política do país." },
-	{ nome:"Forager",			         img:"forager",   					link:"http://evassmat.com/21435391/forager-sem-virus",    descricao:"Inspirado em Stardew Valley nesse mundo aberto 2D seu objetivo é explorar o mapa utilizando recursos que dão spawn do nada para craftar itens ou ter sua fazendinha." },
-	{ nome:"Angry Birds Space",		 img:"angrybirdsspace",			link:"http://evassmat.com/21435391/anfry-birds-space",    descricao:"<b>PÁSSAROS PUTOS</b> NO ESPAÇO <br> Nesse all time classic de celular versão espacial você mata porquinhos verdes lançando pássaros com um estilingue." },
-	{ nome:"Road to your City",		 img:"roadtoyourcity",      link:"http://evassmat.com/21435391/road-to-your-city",    descricao:"É tipo um Sim City, mas seu objetivo vai além de gerenciar só a sua cidade, já que em Road to Your City você deve também saber gerenciar um time de futebol e fazê-lo chegar à glória." },
-	{ nome:"Smartphone Tycoon", 	 img:"smartphonetycoon",   	link:"http://evassmat.com/21435391/smartphone-tycoon",    descricao:"Acha que fazer videojogos é coisa de criança? <br> Seus problemas acabaram! Com Smartphone Tycoon você gerencia uma empresa de celulares e com certeza consegue fazer algo mais inovador que qualquer iPhone." },
-	{ nome:"Bad Piggies", 				 img:"badpiggies",   				link:"http://evassmat.com/21435391/bad-piggies",          descricao:"Cansado de controlar pássaros putos? <br> Aqui seu objetivo é construir engenhosos veículos para seus porcos chegarem até a linha de chegada ou raptarem um delicioso ovo de uma ave em extinção." },
-	{ nome:"Wizard of Legend",		 img:"wizardoflegend",   		link:"http://evassmat.com/21435391/wizard-of-legend",     descricao:"Nesse lindíssimo rouge-like você tem que passar pelos 4 elementos(ar, terra, fogo e água), com uma jogabilidade frenética o jogo deixa você usar espadas e feitiços para matar geral e principalmente os bosses." },
-	{ nome:"Osu!",		             img:"osu",   		          link:"http://evassmat.com/21435391/osu",                  descricao:"Aquele jogo musical com umas garotas de anime no fundo e um viciado clicando em bolinha com o mouse freneticamente,.Muitos acham q o maior papel de osu é treinar a mira no cs, quando na verdade é para... hmm..... deixa eu ver aqui....... é pra treinar mira msm" },
-	{ nome:"Besiege",		           img:"besiege",   		      link:"http://evassmat.com/21435391/besiege",              descricao:"Monte uma catapulta medieval e destrua tudo ou todos em diferentes níveis nesse jogo com uma física apurada" },
-	{ nome:"Empire of the undergrowth", img:"empireoftheundergrowth", link:"http://evassmat.com/21435391/empire-of-the-undergrowth",    descricao:"Estoque comida e levante sua ninhada de formigas nesse bizarro jogo de estratégia em tempo real onde você gerencia um formigueiro." },
-	{ nome:"Call of Duty BO2",		 img:"callofdutybo2",   		link:"http://evassmat.com/21435391/call-of-duty-bo2",    descricao:"Simplesmente o melhor call of duty já criado.<br>Nesse clássico dos jogos de tiro você pode jogar uma historia legalzinha, um onlinezão >foda< ou um zombies <b>PIKA</b> <br> Agradecimentos especiais para <a class=\"red-text\"href=\"https://www.youtube.com/channel/UCmFeh4hRNtALxfBNbNbGyNQ\">Grandtour Games</a> pelo link :)" },
-	{ nome:"Dont't Starve",		     img:"dontstarve",   		    link:"http://evassmat.com/21435391/dont-starve",         descricao:"NÃO MORRA DE FOME. <br>Nesse quase impossível jogo de sobrevivência você pode criar uma base, explorar o mapa, passar um bilhão de dias vivos ou ir fundo na história do jogo através de portais para desbloquear outros personagens. <br>DLCs já inclusas." },
-	{ nome:"Pikuniku",		         img:"pikuniku",   		      link:"http://evassmat.com/21435391/pikuniku",            descricao:"Esse puzzle-exploration absurdo te leva para um colorido mundo que nem sempre é tão feliz quanto parece.Ajudo personagens peculiares em problemas divertidos." },
-	{ nome:"Rocket League",   		 img:"rocketleague",   	   	link:"http://evassmat.com/21435391/rocket-legue",        descricao:"FIFA DE CARRO MANO<br>Ok nem tanto,nesse divertidissimo jogo se tem que mandar os gols com uns carros fodas com umas pinturas mais fodas ainda" },
-];
+				/*var ultima = tabela.insertRow(tabela.rows.length);
+				for (k=0; k<5; k++)
+				{
+					var cel = ultima.insertCell(k);
+					cel.innerHTML = "<div class= \"card grey darken-2 white-text\"> <div class=\"card-image waves-effect waves-block waves-light\"> <img class=\"activator\" src=\"imagens/provisoria\"> </div> <div class=\"card-content\"> <span class=\"card-title activator\">Provisória<i class=\"material-icons right\">more_vert</i></span><p><a target=\"_blank\" href=\"\">Baixar </a><a target=\"_blank\" href=\"\" class=\"btn-floating waves-effect waves-light blue darken-4 btn-small pulse\"><i class=\"material-icons\">cloud_download</i></a></p> </div> <div class=\"card-reveal grey darken-2 white-text\"> <span class=\"card-title white-text\">Provisória<i class=\"material-icons right\">close</i></span> <p>Desc</p>  </div> </div>";
+				}*/
+				/*var nUltima = tabela.rows.length;
+				var ultima = tabela.rows[1];
+				var n = ultima.cells.length;
+				while (n < 8)
+				{
+					var celNova = ultima.insertCell(n);
+					cel.innerHTML = "<div class= \"card grey darken-2 white-text\"> <div class=\"card-image waves-effect waves-block waves-light\"> <img class=\"activator\" src=\"imagens/provisoria\"> </div> <div class=\"card-content\"> <span class=\"card-title activator\">Provisória<i class=\"material-icons right\">more_vert</i></span><p><a target=\"_blank\" href=\"\">Baixar </a><a target=\"_blank\" href=\"\" class=\"btn-floating waves-effect waves-light blue darken-4 btn-small pulse\"><i class=\"material-icons\">cloud_download</i></a></p> </div> <div class=\"card-reveal grey darken-2 white-text\"> <span class=\"card-title white-text\">Provisória<i class=\"material-icons right\">close</i></span> <p>Desc</p>  </div> </div>";
+					n++;
+				}*/
+			}
 
-                jogos.sort(function(a, b){
-                  if (a.nome > b.nome)
-                  {
-                    return 1;
-                  }
-                  if (b.nome > a.nome)
-                  {
-                    return -1;
-                  }
-                  return 0;
-                });
+			s
 
-                var idGrande = "";
-                var  tabela = document.getElementById("tabela");
-								tabela.innerHTML = "";
-                const tamanhoLinha = 5;
-                const qtosJogos = jogos.length;
-                const qtasLinhas = qtosJogos / tamanhoLinha;
-                var qualJogo = 0;
-                for (i=0; i<qtasLinhas; i++)
-                {
-                  var linha = tabela.insertRow(i);
-                  for (j=0; j<tamanhoLinha; j++)
-                  {
-										if (jogos[qualJogo].nome.toLowerCase().indexOf(txt.toString().toLowerCase()) < 0)
-										{
-											qualJogo++;
-											j--;
-										}
-										else
-										{
-												var n = jogos[qualJogo].nome.length;
-												if (n > 15)
-													idGrande = "titulobig1";
-												else if (n > 25)
-													idGrande = "titulobig2";
-												else
-													idGrande="";
-
-	                     var cel = linha.insertCell(j);
-	                     cel.innerHTML = "<div class= \"card grey darken-2 white-text\"> <div class=\"card-image waves-effect waves-block waves-light\"> <img class=\"activator\" src=\"imagens/"+ jogos[qualJogo].img +".jpg\"> </div> <div class=\"card-content\"> <span class=\"card-title activator\" id=\""+ idGrande +"\">"+ jogos[qualJogo].nome +"<i class=\"material-icons right\">more_vert</i></span><p><a target=\"_blank\" href=\""+ jogos[qualJogo].link +"\">Baixar </a><a target=\"_blank\" href=\""+ jogos[qualJogo].link +"\" class=\"btn-floating waves-effect waves-light blue darken-4 btn-small pulse\"><i class=\"material-icons\">cloud_download</i></a></p> </div> <div class=\"card-reveal grey darken-2 white-text\"> <span class=\"card-title white-text\">"+ jogos[qualJogo].nome +"<i class=\"material-icons right\">close</i></span> <p class=\"desc\">"+ jogos[qualJogo].descricao +"</p>  </div> </div>";
-	                     qualJogo++;
-										}
-                  }
-                }
-
-								/*var ultima = tabela.insertRow(tabela.rows.length);
-								for (k=0; k<5; k++)
-								{
-									var cel = ultima.insertCell(k);
-									cel.innerHTML = "<div class= \"card grey darken-2 white-text\"> <div class=\"card-image waves-effect waves-block waves-light\"> <img class=\"activator\" src=\"imagens/provisoria\"> </div> <div class=\"card-content\"> <span class=\"card-title activator\">Provisória<i class=\"material-icons right\">more_vert</i></span><p><a target=\"_blank\" href=\"\">Baixar </a><a target=\"_blank\" href=\"\" class=\"btn-floating waves-effect waves-light blue darken-4 btn-small pulse\"><i class=\"material-icons\">cloud_download</i></a></p> </div> <div class=\"card-reveal grey darken-2 white-text\"> <span class=\"card-title white-text\">Provisória<i class=\"material-icons right\">close</i></span> <p>Desc</p>  </div> </div>";
-								}*/
-								/*var nUltima = tabela.rows.length;
-								var ultima = tabela.rows[1];
-								var n = ultima.cells.length;
-								while (n < 8)
-								{
-									var celNova = ultima.insertCell(n);
-									cel.innerHTML = "<div class= \"card grey darken-2 white-text\"> <div class=\"card-image waves-effect waves-block waves-light\"> <img class=\"activator\" src=\"imagens/provisoria\"> </div> <div class=\"card-content\"> <span class=\"card-title activator\">Provisória<i class=\"material-icons right\">more_vert</i></span><p><a target=\"_blank\" href=\"\">Baixar </a><a target=\"_blank\" href=\"\" class=\"btn-floating waves-effect waves-light blue darken-4 btn-small pulse\"><i class=\"material-icons\">cloud_download</i></a></p> </div> <div class=\"card-reveal grey darken-2 white-text\"> <span class=\"card-title white-text\">Provisória<i class=\"material-icons right\">close</i></span> <p>Desc</p>  </div> </div>";
-									n++;
-								}*/
-            }
-
-
-          </script>
+		</script>
 
 </body>
 <footer class="page-footer">
-				<div class="container">
-					<div class="row">
-						<div class="col l6 s12">
-							<h5 class="white-text">Hub do Moda</h5>
-							<p class="grey-text text-lighten-4">Apreoveitem</p>
-						</div>
-					</div>
-				</div>
-				<div class="footer-copyright">
-					<div class="container">
-					© 2019 Hub do Moda
-					<p class="grey-text text-lighten-4 right">oi eu sou o moda :)</p>
-					</div>
-				</div>
-			</footer>
+	<div class="container">
+		<div class="row">
+			<div class="col l6 s12">
+				<h5 class="white-text">Hub do Moda</h5>
+				<p class="grey-text text-lighten-4">Apreoveitem</p>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			© 2019 Hub do Moda
+			<p class="grey-text text-lighten-4 right">oi eu sou o moda :)</p>
+		</div>
+	</div>
+</footer>
 
 </html>

@@ -3,35 +3,46 @@
 <head>
 
 	<title>Hub do Moda - Softwares</title>
-    <link rel="icon" href="imagens/favicon-32x32.png">
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-	<meta name="description" content=""/>
-	<meta name="keywords" content=""/>
+	
+	<link rel="icon" href="imagens/favicon-32x32.png">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="js/materialize.min.js"></script>
 	<link rel="stylesheet" href="css/master.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link href="https://fonts.googleapis.com/css?family=Heebo|Lato|Montserrat" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/materialize.min.js"></script>
+
 
 	</head>
 	<body>
-
-	<div class="cont">
 		<div class="imagem"></div>
-			<header class="nav">
-				<a href="index.html" class="logo"> Hub do Moda </a>
-				<ul class="paginas">
-					<li class="pagina"><a href="index.html">Home</a></li>
-				 	<li class="pagina"><a href="jogos.html">Jogos</a></li>
-				 	<li class="active pagina"><a href="softwares.html">Softwares</a></li>
-				 	<li class="pagina"><a href="contato.html">Sugestões</a></li>
-					<li class="pagina"><a href="faq.html">FAQ</a></li>
-				</ul>
-			</header>
-			<div class="pag">
+		<nav class="nav">
+			<a href="" class="sidenav-trigger left" data-target="mobile-links"><i class="material-icons">menu</i></a>
+			<a href="index.html" class="logo">Hub do Moda</a>
+			<ul class="paginas hide-on-med-and-down">
+				<li class="pagina"><a href="index.html">Home</a></li>
+				 <li class="pagina"><a href="jogos.html">Jogos</a></li>
+				 <li class="pagina active"><a href="softwares.html">Softwares</a></li>
+				 <li class="pagina"><a href="contato.html">Sugestões</a></li>
+				 <li class="pagina"><a href="faq.html">FAQ</a></li>
+			</ul>
+		</nav>
+		<ul class="sidenav" id="mobile-links">
+				<img class="responsive-img" src="imagens/bg1SEmEscrita.jpg">
+				<a href="" class="logo"> Hub do Moda </a>
+				<li class="mobile"><a href="index.html">Home</a></li>
+        <li class="mobile"><a href="jogos.html">Jogos</a></li>
+        <li class="active mobile"><a href="softwares.html">Softwares</a></li>
+        <li class="mobile"><a href="contato.html">Sugestões</a></li>
+        <li class="mobile"><a href="faq.html">FAQ</a></li>
+		</ul>
+<div class="pagina">
 
 				<img src="imagens/Softwares.png" id="center">
                 <br>
@@ -54,7 +65,9 @@
 
 
 			<script>
-
+$(document).ready(function(){
+			$('.sidenav').sidenav();
+		})
 				fazerTabela("");
 
 				function pesquisou(e)
@@ -78,7 +91,7 @@
 								{ nome:"Auto-clicker", img:"macro.png", link:"http://sowernal.com/21435391/clicker", descricao:"Mano sla pq isso ainda ta na hub, quase ninguem joga clicker,mas se vc quiser um boost brabo ta ai.", grande:false},
 								{ nome:"FL studio 20", img:"flstudio20.png", link:"http://ethobleo.com/21435391/fl-studio-20", descricao:"O melhor aplicativo para produção de musica da atualidade. Desenvolva seus talentos musicais nesse ótimo aplicativo.", grande:false},
 								{ nome:"Photoshop", img:"photoshop.png", link:"http://onisedeo.com/21435391/photoshop", descricao:"O melhor e mais famoso editor de imagem, perdendo o trono somente para o eterno Paint.", grande:false},
-								{ nome:"Sony Vegas pro 14", img:"sonyvegaspro14.jpg", link:"http://evassmat.com/21435391/sonyvegas", descricao:"Um dos melhores e mais famosos editores de vídeo, com sony vegas pro 14 você consegue fazer as mais diversas edições.", grande:false},
+								{ nome:"Sony Vegas pro 14", img:"sonyvegaspro14.jpg", link:"http://ethobleo.com/21435391/sony-vegas-14", descricao:"Um dos melhores e mais famosos editores de vídeo, com sony vegas pro 14 você consegue fazer as mais diversas edições.", grande:false},
 								{ nome:"Fraps", img:"fraps.jpg", link:"http://cesinthi.com/21435391/fraps", descricao:"Um dos mais famosos apps pra gravar a tela do computador e com certeza o mais simples de usar.", grande:false},
 								{ nome:"Inputmapper", img:"inputmapper.jpg", link:"http://cesinthi.com/21435391/input-mapper", descricao:"Quer usar seu controle de PS4 no PC mas não sabe como? Com esse app super fácil de usar, você consegue!", grande:false},
 								{ nome:"Steam", img:"steam.jpg", link:"http://sowernal.com/21435391/steam", descricao:"A steam é grátis para baixar, porque disponibilizar o download dela? É que aqui ela vem com o Admin Hacker, pra você baixar sua biblioteca de jogos em qualquer lugar sem precisar de benefícios de administrador.", grande:false}
@@ -142,6 +155,8 @@ function myFunction() {
   var txt = x += 1;
   document.getElementById("demo").innerHTML = txt;
 }
+
+
 </script>
 
 </body>
