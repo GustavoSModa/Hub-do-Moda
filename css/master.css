@@ -42,27 +42,32 @@ body
 }
 
 #titulobig2 {
-
     font-size:10px;
 }
 
-
-.cont
-{
-    position: relative;
-    margin: 0;
-}
-
-.imagem
+div.imagem
 {
     position: relative;
     width: 100%;
     height: calc(100vh - 50px);
     background: url(../imagens/bg1SEmEscrita.jpg);
     background-size: cover;
+    /*height: auto;*/
 }
 
-header.nav
+.image
+{
+    position: inherit;
+    
+}
+
+div.caixa
+{
+    max-width: 100%;
+    
+}
+
+nav.nav
 {
     position: sticky;
     top: 0;
@@ -75,7 +80,6 @@ header.nav
     justify-content: space-between;
     align-items: center;
     font-size: 16px;
-    /*font-family: arial;*/
     z-index: 1;
 }
 
@@ -85,7 +89,6 @@ header.nav
     text-decoration: none;
     font-weight: 700;
     font-size: 24px;
-    /*font-family: Arial;*/
 }
 
 ul.paginas
@@ -94,31 +97,23 @@ ul.paginas
     margin: 0;
     padding: 0;
     height: 50px;
-}
-
-ul.paginas li.pagina
-{
     list-style: none;
     line-height: 50px;
 }
 
-ul li.pagina a
+ul.paginas li a
 {
-    color: #FFF;
-    text-decoration: none;
     padding: 0 20px;
 }
 
-ul li.pagina:hover
+ul.paginas li:hover
 {
     background: #595959;
-    color: #fff;
 }
 
 ul li.active
 {
-    background: #494949;
-    color: #fff;
+    background: #595959;
 }
 
 .pag
@@ -164,4 +159,21 @@ div.centroEsquerda
     margin: auto;
     width: 80%;
     padding: 10px;
+}
+
+ul.sidenav
+{
+    background-color: #444444;
+    font-size: 25px;
+    color: #FFF;
+}
+
+.responsive-img
+{
+    border: 0px;
+}
+
+ul li.mobile > a
+{
+    color: #FFF;
 }
