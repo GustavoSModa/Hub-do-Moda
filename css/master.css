@@ -126,6 +126,7 @@ ul li.active
 td div
 {
     z-index: 0;
+    max-width: 300px;
 }
 
 td div p.desc
