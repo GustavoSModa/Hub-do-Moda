@@ -184,3 +184,7 @@ ul li.mobile > a
 {
     color: #FFF;
 }
+
+div.nav-wrapper{
+    border-radius: 4%;
+}
