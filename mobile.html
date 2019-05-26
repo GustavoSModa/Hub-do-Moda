@@ -2,7 +2,7 @@
 <html >
 <head>
 
-	<title>Hub do Moda - Softwares</title>
+	<title>Hub do Moda - Mobile</title>
 	
 	<link rel="icon" href="imagens/favicon-32x32.png">
 	<meta charset="utf-8" />
@@ -28,8 +28,8 @@
 			<ul class="paginas hide-on-med-and-down">
 				<li class="pagina"><a href="index.html">Home</a></li>
 				 <li class="pagina"><a href="jogos.html">Jogos</a></li>
-				 <li class="pagina active"><a href="softwares.html">Softwares</a></li>
-				 <li class="pagina"><a href="mobile.html">Mobile</a></li>
+                 <li class="pagina"><a href="softwares.html">Softwares</a></li>
+				 <li class="pagina active"><a href="mobile.html">Mobile</a></li>                 
 				 <li class="pagina"><a href="contato.html">Sugestões</a></li>
 				 <li class="pagina"><a href="faq.html">FAQ</a></li>
 			</ul>
@@ -39,14 +39,14 @@
 				<a href="" class="logo"> Hub do Moda </a>
 				<li class="mobile"><a href="index.html">Home</a></li>
         <li class="mobile"><a href="jogos.html">Jogos</a></li>
-				<li class="active mobile"><a href="softwares.html">Softwares</a></li>
-				<li class="mobile"><a href="mobile.html">Mobile</a></li>
+        <li class="mobile"><a href="softwares.html">Softwares</a></li>
+        <li class="mobile active"><a href="mobile.html">Mobile</a></li>
         <li class="mobile"><a href="contato.html">Sugestões</a></li>
         <li class="mobile"><a href="faq.html">FAQ</a></li>
 		</ul>
 <div class="pag">
 
-				<img src="imagens/Softwares.png" id="center">
+				<img src="imagens/Mobile.png" id="center">
                 <br>
 								<nav>
 									<div class="nav-wrapper">
@@ -96,13 +96,12 @@ $(document).ready(function(){
 				{
 						var apps =
 						[
-								{ nome:"Auto-clicker", img:"macro.png", link:"http://sowernal.com/21435391/clicker", descricao:"Mano sla pq isso ainda ta na hub, quase ninguem joga clicker,mas se vc quiser um boost brabo ta ai.", grande:false},
-								{ nome:"FL studio 20", img:"flstudio20.png", link:"http://ethobleo.com/21435391/fl-studio-20", descricao:"O melhor aplicativo para produção de musica da atualidade. Desenvolva seus talentos musicais nesse ótimo aplicativo.", grande:false},
-								{ nome:"Photoshop", img:"photoshop.png", link:"http://onisedeo.com/21435391/photoshop", descricao:"O melhor e mais famoso editor de imagem, perdendo o trono somente para o eterno Paint.", grande:false},
-								{ nome:"Sony Vegas pro 14", img:"sonyvegaspro14.jpg", link:"http://ethobleo.com/21435391/sony-vegas-14", descricao:"Um dos melhores e mais famosos editores de vídeo, com sony vegas pro 14 você consegue fazer as mais diversas edições.", grande:false},
-								{ nome:"Fraps", img:"fraps.jpg", link:"http://cesinthi.com/21435391/fraps", descricao:"Um dos mais famosos apps pra gravar a tela do computador e com certeza o mais simples de usar.", grande:false},
-								{ nome:"Inputmapper", img:"inputmapper.jpg", link:"http://cesinthi.com/21435391/input-mapper", descricao:"Quer usar seu controle de PS4 no PC mas não sabe como? Com esse app super fácil de usar, você consegue!", grande:false},
-								{ nome:"Steam", img:"steam.jpg", link:"http://sowernal.com/21435391/steam", descricao:"A steam é grátis para baixar, porque disponibilizar o download dela? É que aqui ela vem com o Admin Hacker, pra você baixar sua biblioteca de jogos em qualquer lugar sem precisar de benefícios de administrador.", grande:false}
+							{ nome:"Subway Surfers",      img:"subwaysurfers", link:"http://evassmat.com/21435391/subway-surfers",      descricao:"MANO CORRE DO GUARDINHA MANO <br> Corra numa estação de trem e gaste <b>INHEIRO E CHAVES INFINITAS</b> pra ter todas as skins e skates."},
+              { nome:"Fruit Ninja Classic", img:"fruitninja",    link:"http://evassmat.com/21435391/fruit-ninja-classic", descricao:"Mano ja pensou q dahora deve ser cortar frutas? Agora você pode com fruit ninja classic, que tras os três modos originais de um dos maiores jogos de celular de todos os tempos."},
+              { nome:"Poly Bridge",         img:"polybridge",    link:"http://evassmat.com/21435391/poly-bridge",         descricao:"Construa pontes para carros passarem, mas cuidado para não passar da verba máxima."},
+              { nome:"Minecraft PE",        img:"minecraft",     link:"http://evassmat.com/21435391/minecraft-pe",        descricao:"Se não consegue parar de jogar minezao e ta afim de se destrair no trono, Minecraft PE é o jogo pra você."},
+              { nome:"Flappy Bird",         img:"flappybird",    link:"http://evassmat.com/21435391/flappy-bird",         descricao:"Um clássico dos celulares, controle um pássaro e passe raiva tentando fazer com q ele n bata nos canos. <br> NÃO NOS RESPONSABILIZAMOS POR DANOS AO CELULAR"},
+              { nome:"Where's my Water?",   img:"wheresmywater", link:"http://evassmat.com/21435391/wheres-my-water",     descricao:"Mano cade minha água pro banho vei??? <br> Faça o caminho da água ate o chuveiro e tente coletar todos os patinhos de borracha."},
 						];
 
 						apps.sort(function(a, b){
@@ -146,7 +145,7 @@ $(document).ready(function(){
 									else
 										idGrande="";
 								 var cel = linha.insertCell(j);
-								 cel.innerHTML = "<div class= \"card grey darken-2 white-text\"> <div class=\"card-image waves-effect waves-block waves-light\"> <img class=\"activator\" src=\"imagens/"+ apps[qualapp].img +"\"> </div> <div class=\"card-content\"> <span class=\"card-title activator\" id=\""+ idGrande +"\">"+ apps[qualapp].nome +"<i class=\"material-icons right\">more_vert</i></span><p><a target=\"_blank\" href=\""+ apps[qualapp].link +"\">Baixar </a><a target=\"_blank\" href=\""+ apps[qualapp].link +"\" class=\"btn-floating waves-effect waves-light blue darken-4 btn-small pulse\"><i class=\"material-icons\">cloud_download</i></a></p> </div> <div class=\"card-reveal grey darken-2 white-text\"> <span class=\"card-title white-text\">"+ apps[qualapp].nome +"<i class=\"material-icons right\">close</i></span> <p>"+ apps[qualapp].descricao +"</p>  </div> </div>";
+								 cel.innerHTML = "<div class= \"card grey darken-2 white-text\"> <div class=\"card-image waves-effect waves-block waves-light\"> <img class=\"activator\" src=\"imagens/"+ apps[qualapp].img +".jpg\"> </div> <div class=\"card-content\"> <span class=\"card-title activator\" id=\""+ idGrande +"\">"+ apps[qualapp].nome +"<i class=\"material-icons right\">more_vert</i></span><p><a target=\"_blank\" href=\""+ apps[qualapp].link +"\">Baixar </a><a target=\"_blank\" href=\""+ apps[qualapp].link +"\" class=\"btn-floating waves-effect waves-light blue darken-4 btn-small pulse\"><i class=\"material-icons\">cloud_download</i></a></p> </div> <div class=\"card-reveal grey darken-2 white-text\"> <span class=\"card-title white-text\">"+ apps[qualapp].nome +"<i class=\"material-icons right\">close</i></span> <p>"+ apps[qualapp].descricao +"</p>  </div> </div>";
 								 qualapp++;
 							}
 						}
