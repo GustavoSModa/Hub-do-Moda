@@ -56,7 +56,7 @@ div.imagem
     position: relative;
     width: 100%;
     height: calc(100vh - 50px);
-    background: url(../imagens/bg1SEmEscrita.jpg);
+    background: url(../imagens/bg3BW.jpg);
     background-size: cover;
 
     /*height: auto;*/
